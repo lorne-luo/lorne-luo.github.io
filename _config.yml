@@ -47,7 +47,7 @@ linkedin_username: lorne-luo
 
 # About Section
 about_title: About Me
-about_profile_image: images/profile.png
+about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
   Hi, my name's <b>Lorne</B>, a senior python data engineer. 
   
@@ -56,6 +56,7 @@ about_content: | # this will include new lines to allow paragraphs
   - `15+` years software development experienced on various popular programing languages
   - Extreme enthusiastic coder with around `100` personal project repositories, [average `1k` commits](/images/github_commits.jpg){:target="_blank"} per year besides full-time job
   - Full-Stack Plus developer experienced on: Frontend/Backend web development, Data Engineering/Scientist, Dev/Ops  
+  - AI tech fans, currently using Chatgpt/Whipser/Stable Diffusion/UVR5/Real-ESRGAN/Wav2Lip to automatically produce Youtube Video
 
 content:
   - title: EMPLOYMENT # Title for the section
@@ -63,7 +64,7 @@ content:
     content:
       - layout: left
         title: Leighton O’Brien / Titan Cloud
-        link: leightonobrien.com
+        link: www.leightonobrien.com
         # link_text: boringcompany.com
         sub_title: Python Data Engineer
         caption: Apr 2020 - Present
@@ -90,7 +91,7 @@ content:
           - Follow up end to end process of SDLC including BA, coding, testing, /CD and hotfix on cloud base environment
           - Provide support to the team as a Python and backend expert, serving as a problem solver.
           - Sustain and manage reusable packages and maintain a standard installation repository.
-          - <mark>Fire fighter</mark> <mark>Problem solver</mark> for urgent deadline and thorny project even on not most familiar language
+          - <mark>Fire fighter</mark> for urgent deadline and thorny project
           - Hosted an <mark>Opensource-Insight</mark> channel in team Slack
 
       - layout: left
@@ -110,7 +111,7 @@ content:
     content:
       - layout: left
         title: Enterprise Petroleum Service
-        link: leightonobrien.com
+        link:
         quote: >
           EPS is a comprehensive petroleum industry service solution include real-time inventory statistic, alarm management and monitoring & reporting, backed with AWS based data pipline which process millions IoT data per day.
         description: | # this will include new lines to allow paragraphs
@@ -149,7 +150,7 @@ content:
 
       - layout: left
         title: OmniScreen Pilot
-        link: omniscreen.com.au/
+        link: omniscreen.com.au
         quote: >
           An enterprise TV and digital signage application server which can be provided as an appliance or can be deployed in the Cloud as a SaaS offering..
 
