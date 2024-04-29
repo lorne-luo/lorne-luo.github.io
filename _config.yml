@@ -9,7 +9,7 @@ version: 2
 name: Lorne Luo
 title: Python Data Engineer
 email: dev@luotao.net
-website: cv.luotao.net
+website: http://cv.luotao.net
 
 # Dark Mode (true/false/never)
 darkmode: false
@@ -52,7 +52,7 @@ about_content: | # this will include new lines to allow paragraphs
   Hi, my name's <b>Lorne</B>, a senior Python data engineer.
   
   I am :
-  - One of the `FIRST` group of <mark>Python</mark> developers in Australia since `2015`
+  - One of the earlist group of <mark>Python</mark> developers in Australia since `2015`
   - Over 15 years of software development experience across various popular programming languages.
   - Highly enthusiastic coder with `100+` personal project repos, [average `1k` commits](/images/github_commits.png){:target="_blank"} per year alongside full-time job
   - Experienced as a Full-Stack Plus developer in Frontend/Backend web development, Data Engineering/Science, and DevOps
@@ -159,7 +159,6 @@ content:
           - Implement <mark>FFmpeg</mark> encoding for media files and EPG streaming process
           - Create CI/CD pipeline with <mark>Jenkins</mark>, <mark>Docker</mark> and <mark>Salt-stack</mark>
 
-
   - title: PERSONAL PROJECTS # Title for the section
     layout: list # Type of content section (list/text)
     content:
@@ -228,6 +227,7 @@ content:
 #      Look at this cool image
 #      ![Trees](/images/landscape-trees.jpg "Trees"){:target="_blank"}
 
+
 # Footer
 footer_show_references: true
 # references_title: References on request (Override references text)
@@ -239,5 +239,3 @@ sass:
   sass_dir: _sass
   style: compressed
 
-plugins:
-  - jekyll-seo-tag
