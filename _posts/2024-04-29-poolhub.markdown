@@ -1,0 +1,54 @@
+---
+layout: showcase
+title:  "PoolHub"
+date:   2024-04-29 20:17:22 +1000
+company: Butterfly
+categories: showcase
+description: |
+  One of my friend was running a poolshop, his customer always complaint it's <b>hard to get correct reading from the pool test strip</b>.
+  <br>
+  My friend asked me <b>"Dr. Lorne can you solve this problem in IT's way?"</b>
+items:
+  - image: /images/poolhub/1.problem.png
+    float: left
+    title: Problem
+    description: |
+      - Hard to read the number
+      - Very unfriendly to color blindness/amblyopia customer
+  - image: /images/poolhub/2.collect training pic.png
+    float: right
+    title: Data Collection
+    description: |
+      Designed survey to collect machine analysed accruate number and pool test strip photo
+      44 samples collected
+  - image: /images/poolhub/3.anotate for strip detection.png
+    float: right
+    title: Pool test strip anotation 
+    description: |
+      Crop where pool test strip it is
+  - image: /images/poolhub/3.anotate for strip detection.png
+    float: right
+    title: Pool test strip anotation 
+    description: |
+      Labeled where pool test strip it is
+  - image: /images/poolhub/4.detection.png
+    float: right
+    title: Detection and reading
+    description: |
+      Detect strip from image and get reading, color balance normalization, brightness normalization
+  - image: /images/poolhub/5.rgb_space.png
+    float: right
+    title: Trend Observation
+    description: |
+      Draw sample color in RGB space
+  - image: /images/poolhub/6.model_evaluate.png
+    float: right
+    title: Model Training 
+    description: |
+      Linear regression models training and evaluating to find best one 
+  - image: /images/poolhub/7.mobile_app.png
+    float: right
+    title: Application Design
+    description: |
+      Mobile App to solve the problem for customer
+---
