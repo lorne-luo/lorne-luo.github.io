@@ -2,7 +2,6 @@
 layout: showcase
 title:  "PoolHub"
 date:   2024-04-29 20:17:22 +1000
-company: Butterfly
 categories: showcase
 description: |
   One of my friend was running a poolshop, his customer always complaint it's <b>hard to get correct reading from the pool test strip</b>.
