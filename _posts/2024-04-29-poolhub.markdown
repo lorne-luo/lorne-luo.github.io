@@ -25,11 +25,7 @@ items:
     title: Pool test strip anotation 
     description: |
       Crop where pool test strip it is
-  - image: /images/poolhub/3.anotate for strip detection.png
-    float: right
-    title: Pool test strip anotation 
-    description: |
-      Labeled where pool test strip it is
+  
   - image: /images/poolhub/4.detection.png
     float: right
     title: Detection and reading
