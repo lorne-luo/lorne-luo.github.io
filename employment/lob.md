@@ -1,9 +1,7 @@
 ---
 layout: showcase
 title:  "Leighton Obrien"
-date:   2024-04-29 20:17:22 +1000
-company: Butterfly
-categories: showcase
+permalink: /employment/lob/
 description: |
   Industry-leading provider of fuel software analytics and field technologies, serving <b>20k+</b> fuel station globally along with billions IoT records ingested per month.
 items:
