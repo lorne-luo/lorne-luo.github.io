@@ -127,14 +127,15 @@ content:
             - [<u>TDD and How to</u>](https://docs.google.com/presentation/d/e/2PACX-1vTNimnu1UlgmVXTyRTLg1xI37UNUqADgQXLFSvhc6d0cz9Bo9_hbWxd-vIXTGhOFjL5Q_55Ji1AKWlH/pub?start=true&loop=false&delayms=5000){:target="_blank"}
 
       - layout: left
-        title: <a href="https://butterfly.com.au/our-work/monash-fodmap/" target="_blank">Monash Fodmap</a>
-        link: monashfodmap.com
+        title: <a href="http://cv.luotao.net/projects/monash-fodmap/" target="_blank">Monash Fodmap</a>
+        link: https://butterfly.com.au/our-work/monash-fodmap
+        link_text: monashfodmap.com
         quote: >
           International official website of Monash University Low FODMAP Diet, including public site, blog, e-commerce, course enrollment system and recipe certification system.
 
         description: | # this will include new lines to allow paragraphs
           - Start as contractor, finished `60%` codes of this million dollar valued project in `6` months
-          - Implement a [<u>Two-way data sync</u>](https://docs.google.com/presentation/d/e/2PACX-1vSUn19vIDP0XTwxM_WibMHKXU26tHldlbuZrbjUi3DBNfSqu1tJHqAMajzdEFslms0wWJMa5Ab9AlPd/pub?start=true&loop=false&delayms=5000) between <mark>Django</mark> and <mark>Salesforce</mark> for eCommerce platform
+          - Implement a [<u>Two-way data sync</u>](https://docs.google.com/presentation/d/e/2PACX-1vSDz9pXN-JDKtRM70qNaP75YY8boiLr5wlEegT1AqlXnzQJNS3TJGozcW2MuMI59CeznMAIGRsDJFAZ/pub?start=false&loop=false&delayms=3000) between <mark>Django</mark> and <mark>Salesforce</mark> for eCommerce platform
           - Coding for kernel logic of complicated recipe certification workflow
           - Leverage finite state machine, auto programming to accelerate dev
           - Concluded a life-cycle through [<u>Automated Model-Driven Development Methodology</u>](https://docs.google.com/presentation/d/e/2PACX-1vQShyly1wlMnR4KGB9BBwjDhMtRTSxumuteNmZyFN1CqQVPZlzPClQdoqiRL5LsSATXB6KWwCS6g9J7/pub?start=true&loop=false&delayms=3000) which reduced development resource `20%-40%` for new projects
