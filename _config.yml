@@ -60,23 +60,27 @@ about_content: | # this will include new lines to allow paragraphs
 
 content:
   - title: EMPLOYMENT # Title for the section
-    layout: list # Type of content section (list/text)
+  - layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Leighton O’Brien / Titan Cloud
+      - title: Leighton O’Brien / Titan Cloud
         link: cv.luotao.net/employment/lob/
         link_text: <u>Check Showcases</u>
         sub_title: Senior Data Engineer / DevOps
         caption: Apr 2020 - May 2024
         quote: >
-          Industry-leading provider of fuel software analytics and field technologies, serving 20k+ fuel station across the world, billions IoT records ingestion per month.
+          Industry-leading provider of fuel analytics and field technologies, serving 20k+ fuel station worldwide, billions of IoT records ingestion per month.
+          As a member of wetstock data engineering team, I architected and developed multiple internal data ETL processes and reporting portals critical to the scalability/efficiency/continuity of the broader SaaS platform. I introduced numerous best practices and standards to the team that increased the effectiveness and reliability of our delivered services.
         description: | # this will include new lines to allow paragraphs
-          - DevOps on a global market-oriented data ETL pipeline in petroleum industry which processes billion IoT records per month
-          - Renew outdated data ETL workflows with a series of modern techs and provide high-quality, continuous delivery
-          - Managed 80+ EC2 servers, including server access control, OS/package version upgrades, vulnerability fix and urgent problem solving
-          - Support the whole team as export of <mark>Python</mark>, <mark>Linux</mark>, and <mark>Open-Source</mark> community
-          - Worked with primary data scientist to implement a Python-based Proof-of-Concept for complex analytical and mathematical intellectual property
-          - Web development on both backend and frontend for report purpose API and portal
+          - Developing global distributed IoT data ETL pipeline that processes billions of gauge/delivery/sales records per month for a series of worldwide famous petroleum companies
+          - Migrated and modernized hundreds of outdated Python2 Cronjobs into Python3-based Airflow cluster, unified 6 copies of untracked deployments into one optimized repo
+          - Lead architect to convert legacy scientific analysis IP in VBS to 10X higher efficiency and lower costly Python+Pandas serverless service
+          - Designed, implemented and maintained a series of CICD pipelines leveraging from Jenkins, Github Action, Linux Bash, Powershell, AWS SSM and EventBridge to automate service's deployment, data transfer and infrastructure provisioning
+          - Created a fully automated AWS pipeline critical for duplicating the QA environment from production data fragments, significantly accelerating the dev and integration testing cycle.
+          - Integrated Auth0 for SSO across all reporting services, migrated hundreds of user accounts, and provided a user management tool
+          - Maintained data ingestion Docker images across various operating systems and architectures, assisting clients in deploying them to fuel stations worldwide.
+          - Managed and monitored 80+ Linux EC2 servers using Prometheus, Grafana, Icinga, Ansible, AWS CloudFormation, and Terraform.
+          - Created APIs and frontend pages to support BI platform Yellowfin in both monolithic and serverless ways
 
       - layout: left
         title: Butterfly
@@ -88,7 +92,7 @@ content:
           A leading web development agency in Australia demonstrated by the 64 website design awards.
         description: | # this will include new lines to allow paragraphs
           - Develop solution and implement high-value international web applications as prime back end developer
-          - Follow up end to end process of SDLC including BA, coding, testing, /CD and hotfix on cloud base environment
+          - Follow up end to end process of SDLC including BA, coding, testing, CICD and hotfix on cloud base environment
           - Support the whole team as expert of Python and backend development
           - Sustain and manage reusable libraries and maintain a standard initialization repository.
           - <mark>Fire fighter</mark> for urgent deadline and thorny project
