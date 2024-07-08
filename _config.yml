@@ -122,7 +122,7 @@ content:
         description: | # this will include new lines to allow paragraphs
           - Proposed and established a <mark>Airflow</mark> cluster with 7 nodes, replaced `600+` Python2 cronjobs to Python3 DAGs
           - Integrated <mark>Auth0</mark> authentication with `3` production services for `6` clients, migrated hundreds users
-          - Worked with primary data scientist to implement a proof-of-concept demo with <mark>Pandas</mark>, <mark>Numpy</mark>, <mark>Matplotlib</mark> for analytical/mathematical intensive IP
+          - Worked with primary data scientist to implement a [<u>POC project</u>](/showcase/2024/04/29/fuse.html) with <mark>Pandas</mark>, <mark>Numpy</mark>, <mark>Matplotlib</mark> for analytical/mathematical intensive IP
           - Maintain CI/CD pipelines which using <mark>Jenkins</mark> <mark>Github Action</mark> <mark>Shell</mark> <mark>Powershell</mark> <mark>Kubernetes</mark> <mark>Terraform</mark> <mark>Cloudformation</mark>
           - Managed and monitored `80+` Linux EC2 servers, utilizing <mark>Ansible</mark> <mark>Puppet</mark> <mark>Icinga</mark> <mark>Grafana</mark> <mark>Prometheus</mark> <mark>Statd</mark>
           - Designed and finished a centralized clients metadata management system on serverless architecture, provide both webui and API
