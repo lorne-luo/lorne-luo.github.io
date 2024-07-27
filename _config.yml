@@ -72,16 +72,15 @@ content:
           Industry-leading provider of fuel analytics and field technologies, serving 20k+ fuel station worldwide, billions of IoT records ingestion per month.
           As a member of wetstock data engineering team, I architected and developed multiple internal data ETL processes and reporting portals critical to the scalability/efficiency/continuity of the broader SaaS platform. I introduced numerous best practices and standards to the team that increased the effectiveness and reliability of our delivered services.
         description: | # this will include new lines to allow paragraphs
-          - Developing global distributed IoT data ETL pipeline that processes billions of gauge/delivery/sales records per month for a series of worldwide famous petroleum companies
-          - Migrated and modernized hundreds of outdated Python2 Cronjobs into Python3-based Airflow cluster, unified 6 copies of untracked deployments into one optimized repo
-          - Lead architect to convert legacy scientific analysis IP in VBS to 10X higher efficiency and lower costly Python+Pandas serverless service
-          - Designed, implemented and maintained a series of CICD pipelines leveraging from Jenkins, Github Action, Linux Bash, Powershell, AWS SSM and EventBridge to automate service's deployment, data transfer and infrastructure provisioning
-          - Created a fully automated AWS pipeline critical for duplicating the QA environment from production data fragments, significantly accelerating the dev and integration testing cycle.
-          - Integrated Auth0 for SSO across all reporting services, migrated hundreds of user accounts, and provided a user management tool
-          - Maintained data ingestion Docker images across various operating systems and architectures, assisting clients in deploying them to fuel stations worldwide.
-          - Managed and monitored 80+ Linux EC2 servers using Prometheus, Grafana, Icinga, Ansible, AWS CloudFormation, and Terraform.
-          - Created APIs and frontend pages to support BI platform Yellowfin in both monolithic and serverless ways
-
+          - Modernised hundreds of outdated Python2 Cronjobs to Python3 Airflow cluster, unified 6 copies of untracked code base into one optimised repo
+          - Lead architect to convert wetstock analysis IP in Excel/VBS to a 10x better efficiency AWS serverless service which includes Lambda, SQS, Kinesis, Glue, Redshift and Athena
+          - Restructured data lake on AWS S3, refined data mapping/validation logic and created data archiving plan
+          - Established and maintained a series of CICD pipelines leveraging from Jenkins, Github Action, Linux Bash, Powershell, AWS SSM and EventBridge to automate service's deployment, data transfer and infrastructure provisioning
+          - Created a fully automated pipeline critical for duplicating the QA environment from production data fragments, significantly accelerating the dev and integration testing cycle
+          - Integrated Auth0 to reporting services in various languages including Java, PHP and C#, migrated user accounts and supported user management
+          - Maintained data ingestion Docker images across various operating systems and architectures and assisted clients in deploying them to fuel stations worldwide
+          - Managed and monitored 80+ Linux EC2 servers using Prometheus, Grafana, Icinga, Ansible, AWS CloudFormation, and Terraform
+          - Created Rest APIs and frontpage in FastAPI and Flask to support BI platform Yellowfin
       - layout: left
         title: Butterfly
         link: cv.luotao.net/employment/butterfly/
@@ -122,7 +121,7 @@ content:
         description: | # this will include new lines to allow paragraphs
           - Proposed and established a <mark>Airflow</mark> cluster with 7 nodes, replaced `600+` Python2 cronjobs to Python3 DAGs
           - Integrated <mark>Auth0</mark> authentication with `3` production services for `6` clients, migrated hundreds users
-          - Worked with primary data scientist to implement a [<u>POC project</u>](/showcase/2024/04/29/fuse.html) with <mark>Pandas</mark>, <mark>Numpy</mark>, <mark>Matplotlib</mark> for analytical/mathematical intensive IP
+          - Worked with data scientist to migrate Excel/VBS scripted [<u>analytical IP</u>](/showcase/2024/04/29/fuse.html) into modern Python project using <mark>Pandas</mark>/<mark>PySpark</mark>
           - Maintain CI/CD pipelines which using <mark>Jenkins</mark> <mark>Github Action</mark> <mark>Shell</mark> <mark>Powershell</mark> <mark>Kubernetes</mark> <mark>Terraform</mark> <mark>Cloudformation</mark>
           - Managed and monitored `80+` Linux EC2 servers, utilizing <mark>Ansible</mark> <mark>Puppet</mark> <mark>Icinga</mark> <mark>Grafana</mark> <mark>Prometheus</mark> <mark>Statd</mark>
           - Designed and finished a centralized clients metadata management system on serverless architecture, provide both webui and API
