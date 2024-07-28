@@ -144,6 +144,17 @@ content:
           - Concluded a life-cycle through [<u>Automated Model-Driven Development Methodology</u>](https://docs.google.com/presentation/d/e/2PACX-1vQShyly1wlMnR4KGB9BBwjDhMtRTSxumuteNmZyFN1CqQVPZlzPClQdoqiRL5LsSATXB6KWwCS6g9J7/pub?start=true&loop=false&delayms=3000) which reduced development resource `20%-40%` for new projects
 
       - layout: left
+        title: <a href="https://www.medechat.com.au" target="_blank">Medechat</a>
+        link: https://www.medechat.com.au
+        link_text: medechat.com.au
+        quote: >
+          A reliable, functional and user-friendly <b>Veterinary Telemedicine Platform</b> for progressive veterinarians / specialists and customers.
+
+        description: | 
+          - GraphQL(Graphene) + React architecture
+          - Applied [<u>Model-Driven Development Methodology</u>](https://docs.google.com/presentation/d/e/2PACX-1vQShyly1wlMnR4KGB9BBwjDhMtRTSxumuteNmZyFN1CqQVPZlzPClQdoqiRL5LsSATXB6KWwCS6g9J7/pub?start=true&loop=false&delayms=3000) which accelerated about 20% development time and significantly enhanced maintainability
+          
+      - layout: left
         title: Reform Clothing
         link: reformclothing.com
         quote: >
