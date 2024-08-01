@@ -64,7 +64,7 @@ content:
       - layout: left
         title: Leighton O’Brien / Titan Cloud
         link: cv.luotao.net/employment/lob/
-        link_text: <u>Check Showcases</u>
+        link_text: <u>Check Showcases ⬉</u>
         sub_title: Senior Data Engineer / DevOps
         caption: Apr 2020 - May 2024
         quote: >
@@ -83,7 +83,7 @@ content:
       - layout: left
         title: Butterfly
         link: cv.luotao.net/employment/butterfly/
-        link_text: <u>Check Showcases</u>
+        link_text: <u>Check Showcases ⬉</u>
         sub_title: Senior Full Stack Developer
         caption: Jul 2017 - Apr 2020
         quote: >
@@ -114,7 +114,7 @@ content:
       - layout: left
         title: Enterprise Petroleum Service(iHub)
         link: https://www.leightonobrien.com/wp-content/uploads/2023/09/iHUB-flyer-Leighton-OBrien-Fuel-Management.pdf
-        link_text: Product Brochure
+        link_text: Product Brochure ⬉
         quote: >
           EPS is a comprehensive petroleum industry service solution include real-time inventory statistic, alarm management and monitoring & reporting, backed with AWS based data pipline which process millions IoT data per day.
         description: | # this will include new lines to allow paragraphs
@@ -129,7 +129,7 @@ content:
             - [<u>TDD and How to</u>](https://docs.google.com/presentation/d/e/2PACX-1vTNimnu1UlgmVXTyRTLg1xI37UNUqADgQXLFSvhc6d0cz9Bo9_hbWxd-vIXTGhOFjL5Q_55Ji1AKWlH/pub?start=true&loop=false&delayms=5000){:target="_blank"}
 
       - layout: left
-        title: <a href="http://cv.luotao.net/projects/monash-fodmap/" target="_blank">Monash Fodmap</a>
+        title: <a href="http://cv.luotao.net/projects/monash-fodmap/" target="_blank">Monash Fodmap ⬉</a>
         link: https://butterfly.com.au/our-work/monash-fodmap
         link_text: monashfodmap.com
         quote: >
@@ -150,11 +150,11 @@ content:
           A reliable, functional and user-friendly <b>Veterinary Telemedicine Platform</b> for progressive veterinarians / specialists and customers.
 
         description: | 
-          - GraphQL(Graphene) + React architecture
+          - GraphQL(Graphene) + Celery + React architecture
           - Applied [<u>Model-Driven Development Methodology</u>](https://docs.google.com/presentation/d/e/2PACX-1vQShyly1wlMnR4KGB9BBwjDhMtRTSxumuteNmZyFN1CqQVPZlzPClQdoqiRL5LsSATXB6KWwCS6g9J7/pub?start=true&loop=false&delayms=3000) which accelerated about 20% development time and significantly enhanced maintainability
           
       - layout: left
-        title: Reform Clothing
+        title: <a href="https://www.reformclothing.com" target="_blank">Reform Clothing</a>
         link: reformclothing.com
         quote: >
           Makes high-quality custom-made apparel from design to delivery.
@@ -180,6 +180,18 @@ content:
     content:
 
       - layout: left
+        title: Orpheus
+        link: https://www.youtube.com/channel/UCa9BFIWwR2y5L8neMgZWyXA
+        link_text: Youtube Channel
+        quote: >
+          Gen AI project for automated music video generation and publishingon Youtube.
+
+        description: |
+          - Fully automated process for audio downloading, subtitle generation, video rendering and Youtube publishing
+          - Used a series of Generative AI includes <mark>ChatGPT</mark>, <mark>Stable Diffusion</mark>, <mark>Real-ESRGAN</mark>, and <mark>Wav2lip</mark>
+          - Multi-media video processing in <mark>FFMpeg</mark>, <mark>UVR5</mark>, <mark>Whisper</mark> and <mark>Librosa</mark>
+
+      - layout: left
         title: Hawkeye
         link: hawkeye.luotao.net
         quote: >
@@ -188,7 +200,6 @@ content:
         description: |
           - Tech stacks: <mark>Python</mark>, <mark>Kiness</mark>, <mark>Airflow</mark>, <mark>DynamoDB</mark>, <mark>Lambda</mark>, <mark>Redis</mark>, <mark>Django</mark>, <mark>TA-Lib</mark>, <mark>Pandas</mark>, <mark>Numpy</mark>, <mark>Matplotlib</mark>, <mark>Seaborn</mark>
           - [<u>Screenshots</u>](/images/hawkeye.png){:target="_blank"}
-#          ![Hawkeye](/images/hawkeye.png "Hawkeye")
 
       - layout: left
         title: QSForex
