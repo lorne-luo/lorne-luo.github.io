@@ -7,7 +7,7 @@ version: 2
 
 # Personal info
 name: Lorne Luo
-title: Python Data Engineer / DevOps
+title: Data / DevOps Engineer
 email: dev@luotao.net
 website: http://cv.luotao.net
 
@@ -49,7 +49,7 @@ linkedin_username: lorne-luo
 about_title: About Me
 about_profile_image: images/profile.png
 about_content: | # this will include new lines to allow paragraphs
-  Hi, my name's <b>Lorne</B>, a senior <mark>Python Data Engineer</mark> / <mark>DevOps Engineer</mark>.
+  Hi, my name's <b>Lorne</B>, a senior <mark>Data Engineer</mark> / <mark>DevOps Engineer</mark>.
   
   I am :
   - Over 15 years of extensive software development experience spanning many popular programming languages including Java, C#, Typescript and Python.
