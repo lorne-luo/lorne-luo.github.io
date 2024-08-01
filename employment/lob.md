@@ -3,7 +3,7 @@ layout: showcase
 title:  "Leighton Obrien"
 permalink: /employment/lob/
 description: |
-  As a member of data engineering team, I participated the development of data warehouse solution including data ingestion, data ETL, analysis, and repoting.. I introduced numerous best practices and standards to the team that increased the effectiveness and reliability of our services delivery .
+  As a member of data engineering team, I palyed crucial role in improving data ingestion, modernlising ETL pipeline, creating report portal and infrastructure provisioning. I introduced numerous best practices and standards to the team that increased the effectiveness and reliability of our services delivery .
 items:
   - image: /images/lob/LOB data solution.png
     float: left
