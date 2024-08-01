@@ -3,16 +3,18 @@ layout: showcase
 title:  "Leighton Obrien"
 permalink: /employment/lob/
 description: |
-  Industry-leading provider of fuel software analytics and field technologies, serving <b>20k+</b> fuel station globally along with billions IoT records ingested per month.
+  As a member of data engineering team, I participated the development of data warehouse solution including data ingestion, data ETL, analysis, and repoting.. I introduced numerous best practices and standards to the team that increased the effectiveness and reliability of our services delivery .
 items:
-  - image: /images/lob/LOB data intellegence solution.png
+  - image: /images/lob/LOB data solution.png
     float: left
-    title: Business
+    title: Data Warehouse
     description: |
       <ul>
-        <li>Data ETL pipeline</li>
-        <li>IP intelligence</li>
-        <li>Report and alarm</li>
+        <li>Data ingestion</li>
+        <li>Data lake</li>
+        <li>Wetstock analysis</li>
+        <li>Data warehouse</li>
+        <li>Reporting and alarm</li>
       </ul>
   
   - image: /images/lob/python2to3.jpg
