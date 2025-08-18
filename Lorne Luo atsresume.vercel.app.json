@@ -1,0 +1,176 @@
+{
+    "name": "Lorne Luo",
+    "position": "Data / DevOps Engineer",
+    "contactInformation": "0413725868",
+    "email": "luotao.net@gmail.com",
+    "address": "Melbourne, Australia",
+    "profilePicture": "",
+    "socialMedia": [
+      {
+        "socialMedia": "Github",
+        "link": "https://github.com/lorne-luo"
+      },
+      {
+        "socialMedia": "LinkedIn",
+        "link": "https://linkedin.com/in/lorne-luo"
+      },
+      {
+        "socialMedia": "Website",
+        "link": "https://cv.luotao.net"
+      }
+    ],
+    "summary": "Passionate developer with 15+ years of experience in designing and developing data ETL project and full stack web application in most popular languages.Recent 5 years focused on Python based data project on IoT and finacial industry. ",
+    "education": [
+      {
+        "school": "Beihang University",
+        "degree": "PhD of Software Engineering (Quit)",
+        "startYear": "2010",
+        "endYear": "2014"
+      },
+      {
+        "school": "Hebei University of Technology",
+        "degree": "MS of Computer Science",
+        "startYear": "2007",
+        "endYear": "2010"
+      },
+      {
+        "school": "Hunan Normal University",
+        "degree": "BS of Computer Science",
+        "startYear": "2002",
+        "endYear": "2006"
+      }
+    ],
+    "workExperience": [
+      {
+        "company": "Selfwealth / Syfe",
+        "position": "Data Engineer",
+        "description": "Deisgn and implement a data feed pipeline which load customer financial data from internal system and export to external partners",
+        "keyAchievements": "Engineered and delivered a second-generation Python data feed pipeline within a 4-month timeframe, achieving a 30% reduction in development cycle time compared to its predecessor\nSuccessfully integrated the core ANZ ACMC system into the data pipeline, ensuring seamless and reliable data flow for critical business operations\nAchieved exceptional production stability, resulting in zero critical incidents until now(8 Months) and ensuring high data integrity and availability.\nArchitected and built a next-generation data feed platform with a flexible design to support multiple data domains and diverse export targets\nAs the first Python developer in the team, pioneered Python development standards includes project structure, coding conventions, deployment, observability and testing guidelines",
+        "startYear": "Aug 2024",
+        "endYear": "Present"
+      },
+      {
+        "company": "Leighton OBrien / Titan Cloud",
+        "position": "Data / DevOps Engineer",
+        "description": "Provide Wetstock asset management and IoT data analysis to 20k+ fuel stations globally. ",
+        "keyAchievements": "Modernised outdated Python2 Cronjobs to Python3 Airflow ecosystem, unified 6 copies of untracked code base into a single repo\nLead architect to convert wetstock analysis IP in Excel/VBS to AWS serverless service which includes Lambda, SQS, Kinesis, Glue and Redshift\nRestructured data lake on AWS S3, refined data mapping/validation logic and created data archiving plan\nEstablished and maintained a series of CICD pipelines on Jenkins and Github Action\nCreated an AWS Cloudformation automated pipeline for duplicating the QA environment from production data fragments\nIntegrated Auth0 to the whole product lines in various languages including Java, PHP, C# and Python\nMaintained data ingestion Docker images across various operating systems and architectures and assisted clients in deploying them to fuel stations worldwide \nManaged and monitored 80+ Linux EC2 servers using Prometheus, Grafana, Icinga, Ansible, AWS CloudFormation, and Terraform.\nCreated Rest APIs and frontpage in FastAPI and Flask to support BI platform Yellowfin",
+        "startYear": "Apr 2020",
+        "endYear": "May 2024"
+      },
+      {
+        "company": "Butterfly",
+        "position": "Full Stack Developer",
+        "description": "Led backend development of international web applications. Supported the team as expert in Python and backend development.",
+        "keyAchievements": "Built custom web applications across industries; implemented CI/CD pipelines; maintained reusable libraries; acted as firefighter for urgent deadlines.",
+        "startYear": "Jul 2017",
+        "endYear": "Apr 2020"
+      },
+      {
+        "company": "Combitel",
+        "position": "Full Stack / DevOps Engineer",
+        "description": "Developed and operated IPTV middleware providing multimedia content management and delivery across devices.",
+        "keyAchievements": "Focused on service-side architecture design and programming for large-scale media delivery systems.",
+        "startYear": "Mar 2015",
+        "endYear": "Mar 2017"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Enterprise Petroleum Service",
+        "description": "Airflow migration, Auth0 integration, CI/CD pipeline modernization, Linux server management, and Wetstock IoT analysis.",
+        "link": "https://cv.luotao.net/employment/lob/"
+      },
+      {
+        "name": "Monash Fodmap",
+        "description": "Official website including blog, e-commerce, course enrollment and certification process. 2018 Melbourne Design Awards gold winner.",
+        "link": "https://cv.luotao.net/projects/monash-fodmap/"
+      },
+      {
+        "name": "Orpheus",
+        "description": "Automated audio/video pipeline using AI (ChatGPT, Stable Diffusion, Whisper) to publish YouTube videos.",
+        "link": "https://www.youtube.com/@guagua-music/videos"
+      },
+      {
+        "name": "Hawkeye",
+        "description": "ETL pipeline for ASX HOLC data with Monte Carlo Simulation ranking model for trading strategy.",
+        "link": "http://h.luotao.net/"
+      }
+    ],
+    "skills": [
+      {
+        "title": "Programming Languages",
+        "skills": [
+          "Python",
+          "Node.js",
+          "Java"
+        ]
+      },
+      {
+        "title": "Data ETL",
+        "skills": [
+          "Airflow",
+          "StepFunction",
+          "Pandas",
+          "PySpark",
+          "Databricks",
+          "DBT",
+          "Glue",
+          "ECS",
+          "AWS Batch",
+          "Kinesis",
+          "Athena",
+          "Celery",
+          "Luigi"
+        ]
+      },
+      {
+        "title": "Web & API",
+        "skills": [
+          "Django",
+          "Flask",
+          "FastAPI",
+          "React",
+          "Angular",
+          "GraphQL"
+        ]
+      },
+      {
+        "title": "DevOps",
+        "skills": [
+          "AWS CloudFormation",
+          "Github Actions",
+          "Datadog",
+          "Jenkins",
+          "Ansible",
+          "Terraform",
+          "Docker",
+          "Prometheus",
+          "Grafana",
+          "Icinga",
+          "Shell",
+          "Powershell",
+          "Puppet"
+        ]
+      },
+      {
+        "title": "Databases",
+        "skills": [
+          "MySQL",
+          "Postgres",
+          "DynamoDB",
+          "Redis",
+          "SqlAlchemy",
+          "SqlModel",
+          "Prisma"
+        ]
+      }
+    ],
+    "languages": [
+      "English",
+      "Mandarin"
+    ],
+    "certifications": [
+      "AWS Certified Cloud Practitioner"
+    ]
+  }
+  
