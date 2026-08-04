@@ -1,0 +1,288 @@
+---
+layout: default
+title: Lorne's CV
+---
+
+<!-- ── SPEC HEAD ────────────────────────────────────── -->
+<div class="head">
+  <div class="name">
+    <span class="k">Datasheet · rev. 2026.08</span>
+    <h1>Lorne Luo</h1>
+    <p class="spec">Senior data and DevOps engineer. <b>Fifteen years</b> of moving data out of
+    untrusted sources and keeping it flowing — quietly, and with the pager silent.</p>
+    <a class="arrow" href="mailto:{{ site.email }}">Available for senior data roles →</a>
+  </div>
+  <div class="idcard">
+    <div><span class="k">Email</span><p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p></div>
+    <div><span class="k">Phone</span><p class="mono">{{ site.phone }}</p></div>
+    <div><span class="k">Repositories</span><p><a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a></p></div>
+    <div><span class="k">Network</span><p><a href="https://linkedin.com/in/{{ site.linkedin_username }}">linkedin.com/in/{{ site.linkedin_username }}</a></p></div>
+    <div><span class="k">Location</span><p>Melbourne, Australia</p></div>
+    <div><span class="k">Certification</span><p>AWS Certified Cloud Practitioner</p></div>
+    <div><span class="k">Primary stack</span><p>Python · Airflow · AWS · Django</p></div>
+    <div><span class="k">Languages</span><p>English · Mandarin</p></div>
+  </div>
+</div>
+
+<div class="specs">
+  <div><span class="k">Tenure</span><b>15 yr</b><p>In production software</p></div>
+  <div><span class="k">Scale</span><b>20k+</b><p>Fuel stations served</p></div>
+  <div><span class="k">Ingest</span><b>10⁹/mo</b><p>IoT records per month</p></div>
+  <div><span class="k">Migrated</span><b>600+</b><p>Py2 jobs → Airflow DAGs</p></div>
+  <div><span class="k">Fleet</span><b>80+</b><p>Linux EC2 under monitoring</p></div>
+  <div><span class="k">Incidents</span><b>0</b><p>Critical, current platform</p></div>
+</div>
+
+<!-- ── CHANGELOG ────────────────────────────────────── -->
+<div class="sec" id="log"><h2>Changelog — employment</h2><span class="k">4 entries · newest first</span></div>
+<div class="log">
+
+  <div class="rel">
+    <div class="when">
+      <span class="mono">2024.08 → present</span>
+      <span class="k">Melbourne · Fintech</span>
+      <img src="{{ '/assets/logos/org/syfe.png' | relative_url }}" alt="Syfe">
+    </div>
+    <div class="what">
+      <div class="hd"><h3>Selfwealth by Syfe</h3><span class="tagrole">Data Engineer</span></div>
+      <p class="ctx">Australian low-cost share-trading platform, acquired by Singapore digital wealth
+      manager Syfe in an <b>A$65M</b> all-cash scheme completed May 2025 (group AUM US$10B+). Owner of the
+      data feed pipeline carrying customer financial data from internal systems to external partners.</p>
+      <ul class="ch">
+        <li><span class="t">SHIPPED</span><span class="d">Second-generation Python data feed pipeline delivered in a <b>4-month window</b> — 30% less development cycle time than its predecessor</span></li>
+        <li><span class="t">INTEGRATED</span><span class="d">Core <b>ANZ ACMC</b> system wired into the pipeline, securing reliable flow for business-critical operations</span></li>
+        <li><span class="t">STABILITY</span><span class="d"><b>Zero critical production incidents</b> since launch; integrity and availability held through the acquisition</span></li>
+        <li><span class="t">ARCHITECTED</span><span class="d">Next-generation feed platform designed for multiple data domains and diverse export targets</span></li>
+        <li><span class="t">STANDARDS</span><span class="d">First Python developer on the team — set project structure, conventions, deployment, observability and testing guidelines</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rel">
+    <div class="when">
+      <span class="mono">2020.04 → 2024.05</span>
+      <span class="k">Melbourne · Fuel IoT</span>
+      <img src="{{ '/assets/logos/org/titancloud.png' | relative_url }}" alt="Titan Cloud">
+    </div>
+    <div class="what">
+      <div class="hd"><h3>Leighton O'Brien / Titan Cloud</h3><span class="tagrole">Sr Data Eng / DevOps</span></div>
+      <p class="ctx">Industry-leading fuel analytics and field technology provider — <b>20k+ stations
+      worldwide, billions of IoT records ingested per month</b>. Architect and builder of the internal
+      ETL and reporting layer the wider SaaS platform depends on.</p>
+      <ul class="ch">
+        <li><span class="t">MIGRATED</span><span class="d">Hundreds of legacy Python 2 cronjobs onto a Python 3 <b>Airflow</b> cluster; six untracked copies of the codebase unified into one repo</span></li>
+        <li><span class="t">RE-ARCH</span><span class="d">Lead architect moving wetstock analysis IP out of <b>Excel/VBA</b> into a <b>10× more efficient</b> Java/Python AWS serverless service — Lambda, SQS, Kinesis, Glue, Redshift, Athena</span></li>
+        <li><span class="t">DATA LAKE</span><span class="d">S3 lake restructured; mapping and validation logic refined; archiving plan authored</span></li>
+        <li><span class="t">CI/CD</span><span class="d">Pipelines across Jenkins, GitHub Actions, Bash, PowerShell, AWS SSM and EventBridge for deployment, data transfer and provisioning</span></li>
+        <li><span class="t">TOOLING</span><span class="d">Fully automated cloning of the QA environment from production data fragments — dev and integration test cycles sharply shortened</span></li>
+        <li><span class="t">AUTH</span><span class="d"><b>Auth0</b> integrated into reporting services in Java and C#; user accounts migrated and managed</span></li>
+        <li><span class="t">PACKAGING</span><span class="d">Data-ingestion <b>Docker</b> images maintained across operating systems and architectures for worldwide client rollout</span></li>
+        <li><span class="t">SRE</span><span class="d"><b>80+ Linux EC2</b> servers run on Prometheus, Grafana, Icinga, Ansible, CloudFormation and Terraform</span></li>
+        <li><span class="t">API</span><span class="d">REST APIs and front pages in FastAPI, Flask and Angular backing the Yellowfin BI platform</span></li>
+      </ul>
+      <a class="ref" href="{{ '/employment/lob/' | relative_url }}">Project showcase ↗</a>
+    </div>
+  </div>
+
+  <div class="rel">
+    <div class="when">
+      <span class="mono">2017.07 → 2020.04</span>
+      <span class="k">Melbourne · Agency</span>
+      <img src="{{ '/assets/logos/org/butterfly.png' | relative_url }}" alt="Butterfly">
+    </div>
+    <div class="what">
+      <div class="hd"><h3>Butterfly</h3><span class="tagrole">Sr Full Stack Developer</span></div>
+      <p class="ctx">Leading Australian web development agency — <b>64 website design awards</b>.</p>
+      <ul class="ch">
+        <li><span class="t">DELIVERY</span><span class="d">Prime backend developer on high-value international web applications, end to end across BA, coding, testing, CI/CD and hotfix</span></li>
+        <li><span class="t">PLATFORM</span><span class="d">Team's Python and backend authority; reusable libraries and a standard project-initialisation repo maintained</span></li>
+        <li><span class="t">CULTURE</span><span class="d">Agency fire fighter for urgent deadlines and thorny projects; ran an <em>Opensource-Insight</em> channel in the team Slack</span></li>
+      </ul>
+      <a class="ref" href="{{ '/employment/butterfly/' | relative_url }}">Project showcase ↗</a>
+    </div>
+  </div>
+
+  <div class="rel">
+    <div class="when">
+      <span class="mono">2015.03 → 2017.02</span>
+      <span class="k">Melbourne · IPTV</span>
+    </div>
+    <div class="what">
+      <div class="hd"><h3>Combitel</h3><span class="tagrole">Full Stack / DevOps</span></div>
+      <p class="ctx">Large-scale, high-availability IPTV solutions. Dev/Ops for the middleware delivering
+      multimedia content management across devices, focused on service-side architecture and programming.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── WORK TABLE ───────────────────────────────────── -->
+<div class="sec" id="wk"><h2>Selected work</h2><span class="k">6 featured of 10</span></div>
+<table class="wk">
+  <tr><th class="n"></th><th class="nm">Project</th><th class="dt">What it is / what I did</th><th class="st">Stack</th></tr>
+  <tr>
+    <td class="n">01</td>
+    <td class="nm"><strong>Enterprise Petroleum Service (iHub)</strong><span class="k">Data platform · 2020—24</span></td>
+    <td class="dt">Real-time inventory statistics, alarm management, monitoring and reporting on an AWS pipeline handling <b>millions of IoT records a day</b>.
+      <ul>
+        <li>Proposed and stood up a <b>7-node Airflow cluster</b>, retiring 600+ Python 2 cronjobs</li>
+        <li>Auth0 across 3 production services for 6 clients, hundreds of users migrated</li>
+        <li>Excel/VBA analytical IP ported to Pandas / PySpark with the data science team</li>
+        <li>Centralised serverless client-metadata system, web UI plus API</li>
+        <li>10+ internal wiki pages and skill-shares — <em>Advanced Git</em>, <em>TDD and How To</em></li>
+      </ul></td>
+    <td class="st"><div class="marks">
+      <img src="{{ '/assets/logos/tech/apacheairflow.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/python.svg' | relative_url }}" alt="">
+      <img src="{{ '/assets/logos/tech/amazonwebservices.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/awslambda.svg' | relative_url }}" alt="">
+      <img src="{{ '/assets/logos/tech/apachespark.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/pandas.svg' | relative_url }}" alt="">
+      <img src="{{ '/assets/logos/tech/auth0.svg' | relative_url }}" alt=""></div></td>
+  </tr>
+  <tr>
+    <td class="n">02</td>
+    <td class="nm"><strong>Monash FODMAP</strong><span class="k">Web platform · gold, 2018 MDA</span></td>
+    <td class="dt">International official site of the <b>Monash University Low FODMAP Diet</b> — public site, blog, e-commerce, course enrolment, recipe certification.
+      <ul>
+        <li>Joined as contractor, wrote <b>60% of this million-dollar project in 6 months</b></li>
+        <li>Two-way <b>Django ↔ Salesforce</b> data sync for the e-commerce platform</li>
+        <li>Kernel logic of the recipe certification workflow — finite state machine plus auto-programming</li>
+        <li>Distilled into Automated Model-Driven Development: <b>20–40% less dev resource</b> on later projects</li>
+      </ul>
+      <a class="ref" href="{{ '/projects/monash-fodmap/' | relative_url }}">Showcase ↗</a></td>
+    <td class="st"><div class="marks">
+      <img src="{{ '/assets/logos/tech/django.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/python.svg' | relative_url }}" alt="">
+      <img src="{{ '/assets/logos/tech/postgresql.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/celery.svg' | relative_url }}" alt="">
+      <img src="{{ '/assets/logos/org/monash.png' | relative_url }}" alt="Monash"></div></td>
+  </tr>
+  <tr>
+    <td class="n">03</td>
+    <td class="nm"><strong>Orpheus</strong><span class="k">Generative AI · ongoing</span></td>
+    <td class="dt">Pipeline that <b>automatically produces videos, karaoke tracks and subtitles</b> for music and publishes them to YouTube, unattended end to end.
+      <ul>
+        <li>ChatGPT, Stable Diffusion, Real-ESRGAN and Wav2Lip chained into one production run</li>
+        <li>Media processing with FFmpeg, UVR5, Whisper and Librosa</li>
+      </ul>
+      <a class="ref" href="https://www.youtube.com/channel/UCa9BFIWwR2y5L8neMgZWyXA">YouTube channel ↗</a></td>
+    <td class="st"><div class="marks"><img src="{{ '/assets/logos/tech/python.svg' | relative_url }}" alt=""></div></td>
+  </tr>
+  <tr>
+    <td class="n">04</td>
+    <td class="nm"><strong>PoolHub</strong><span class="k">Computer vision · 2024</span></td>
+    <td class="dt">Reads values off <b>pool water test strips</b> from a phone photo, so a pool shop's customers need not eyeball a colour chart.
+      <ul>
+        <li>Supervised dataset pairing accurate readings with strip photographs</li>
+        <li><b>YOLOv8</b> detector trained to locate strips in frame</li>
+        <li>Brightness and colour balance normalised, per-reagent RGB extracted</li>
+        <li><b>7 supervised models</b> trained and compared against ground truth</li>
+      </ul>
+      <a class="ref" href="{{ '/showcase/2024/04/29/poolhub.html' | relative_url }}">Showcase ↗</a></td>
+    <td class="st"><div class="marks"><img src="{{ '/assets/logos/tech/python.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/numpy.svg' | relative_url }}" alt=""></div></td>
+  </tr>
+  <tr>
+    <td class="n">05</td>
+    <td class="nm"><strong>Hawkeye</strong><span class="k">Quantitative · hawkeye.luotao.net</span></td>
+    <td class="dt">Weekly decision system for <b>ASX equities</b> using Monte Carlo stochastic simulation to produce a return/risk-balanced ranking.</td>
+    <td class="st"><div class="marks">
+      <img src="{{ '/assets/logos/tech/python.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/apacheairflow.svg' | relative_url }}" alt="">
+      <img src="{{ '/assets/logos/tech/amazondynamodb.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/awslambda.svg' | relative_url }}" alt="">
+      <img src="{{ '/assets/logos/tech/redis.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/django.svg' | relative_url }}" alt=""></div></td>
+  </tr>
+  <tr>
+    <td class="n">06</td>
+    <td class="nm"><strong>Medechat</strong><span class="k">Product · medechat.com.au</span></td>
+    <td class="dt">Veterinary <b>telemedicine platform</b> for progressive vets, specialists and their clients.
+      <ul>
+        <li>GraphQL (Graphene) + Celery + React architecture</li>
+        <li>Model-Driven Development cut ~20% of development time and improved maintainability</li>
+      </ul></td>
+    <td class="st"><div class="marks">
+      <img src="{{ '/assets/logos/tech/graphql.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/tech/react.svg' | relative_url }}" alt="">
+      <img src="{{ '/assets/logos/tech/celery.svg' | relative_url }}" alt=""><img src="{{ '/assets/logos/org/medechat.png' | relative_url }}" alt="Medechat"></div></td>
+  </tr>
+</table>
+
+<div class="arch">
+  <div><span class="k">Also shipped</span><p><b>QSForex</b> — event-driven Forex platform: tick-level streaming, pluggable strategies, broker-swappable interface.</p></div>
+  <div><span class="k">&nbsp;</span><p><b>Reform Clothing</b> — Django DRF tuned for a <b>~95% response-time reduction</b>; React design lab built.</p></div>
+  <div><span class="k">&nbsp;</span><p><b>OmniScreen Pilot</b> — enterprise TV / digital-signage server: device management, FFmpeg encoding, EPG streaming.</p></div>
+  <div><span class="k">&nbsp;</span><p><b>OZSales</b> — multi-tenant order and logistics tracking in Django, Celery, Postgres, Vue.js.</p></div>
+</div>
+
+<!-- ── CAPABILITY ───────────────────────────────────── -->
+<div class="sec" id="cap"><h2>Capability matrix</h2><span class="k">Hands-on, current</span></div>
+<div class="cap">
+  <div class="r"><span class="k">Languages</span><div class="v">
+    <span class="u"><img src="{{ '/assets/logos/tech/python.svg' | relative_url }}" alt="">Python</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/typescript.svg' | relative_url }}" alt="">TypeScript</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/nodedotjs.svg' | relative_url }}" alt="">Node.js</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/openjdk.svg' | relative_url }}" alt="">Java</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/gnubash.svg' | relative_url }}" alt="">Bash</span>
+    <span class="u">PowerShell</span><span class="u">C#</span>
+  </div></div>
+  <div class="r"><span class="k">Data / ETL</span><div class="v">
+    <span class="u"><img src="{{ '/assets/logos/tech/apacheairflow.svg' | relative_url }}" alt="">Airflow</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/apachespark.svg' | relative_url }}" alt="">PySpark</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/pandas.svg' | relative_url }}" alt="">Pandas</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/databricks.svg' | relative_url }}" alt="">Databricks</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/dbt.svg' | relative_url }}" alt="">dbt</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/celery.svg' | relative_url }}" alt="">Celery</span>
+    <span class="u">Glue</span><span class="u">Athena</span><span class="u">Kinesis</span>
+    <span class="u">Step Functions</span><span class="u">AWS Batch</span><span class="u">Luigi</span>
+  </div></div>
+  <div class="r"><span class="k">Web / API</span><div class="v">
+    <span class="u"><img src="{{ '/assets/logos/tech/django.svg' | relative_url }}" alt="">Django</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/fastapi.svg' | relative_url }}" alt="">FastAPI</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/flask.svg' | relative_url }}" alt="">Flask</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/react.svg' | relative_url }}" alt="">React</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/angular.svg' | relative_url }}" alt="">Angular</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/graphql.svg' | relative_url }}" alt="">GraphQL</span>
+  </div></div>
+  <div class="r"><span class="k">Cloud / DevOps</span><div class="v">
+    <span class="u"><img src="{{ '/assets/logos/tech/amazonwebservices.svg' | relative_url }}" alt="">AWS</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/terraform.svg' | relative_url }}" alt="">Terraform</span>
+    <span class="u">CloudFormation</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/docker.svg' | relative_url }}" alt="">Docker</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/kubernetes.svg' | relative_url }}" alt="">Kubernetes</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/githubactions.svg' | relative_url }}" alt="">GitHub Actions</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/jenkins.svg' | relative_url }}" alt="">Jenkins</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/ansible.svg' | relative_url }}" alt="">Ansible</span>
+    <span class="u">Puppet</span>
+  </div></div>
+  <div class="r"><span class="k">Observability</span><div class="v">
+    <span class="u"><img src="{{ '/assets/logos/tech/prometheus.svg' | relative_url }}" alt="">Prometheus</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/grafana.svg' | relative_url }}" alt="">Grafana</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/datadog.svg' | relative_url }}" alt="">Datadog</span>
+    <span class="u">Icinga</span><span class="u">StatsD</span>
+  </div></div>
+  <div class="r"><span class="k">Databases</span><div class="v">
+    <span class="u"><img src="{{ '/assets/logos/tech/postgresql.svg' | relative_url }}" alt="">Postgres</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/mysql.svg' | relative_url }}" alt="">MySQL</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/amazondynamodb.svg' | relative_url }}" alt="">DynamoDB</span>
+    <span class="u"><img src="{{ '/assets/logos/tech/redis.svg' | relative_url }}" alt="">Redis</span>
+    <span class="u">Redshift</span><span class="u">SQLAlchemy</span><span class="u">SQLModel</span><span class="u">Prisma</span>
+  </div></div>
+</div>
+
+<!-- ── EDUCATION + OFF THE CLOCK ────────────────────── -->
+<div class="sec" id="ed"><h2>Education / off the clock</h2><span class="k">Software engineering · China</span></div>
+<div class="two">
+  <div>
+    <div class="ed"><div class="y">2010 — 2014</div><div class="s"><strong>Beihang University</strong>
+      <span>PhD, Software Engineering</span>
+      <em>Top-3 computer science university in China. Withdrew after four years to migrate to Australia.</em></div></div>
+    <div class="ed"><div class="y">2007 — 2010</div><div class="s"><strong>Hebei University of Technology</strong>
+      <span>MS, Software Engineering</span></div></div>
+    <div class="ed"><div class="y">2002 — 2006</div><div class="s"><strong>Hunan Normal University</strong>
+      <span>BS, Computer Science</span></div></div>
+  </div>
+  <div>
+    <div class="off">
+      <a href="https://www.dreamstime.com/luotao_info#res6109850">Photography — Dreamstime<span>↗</span></a>
+      <a href="https://www.youtube.com/@user-yg1zb6xb3j/videos">YouTube channel<span>↗</span></a>
+      <a href="https://youtu.be/w4rGUOMeu8I">Snowboarding<span>↗</span></a>
+      <a href="https://youtu.be/Xm2Yx8Oiwvc">Drone aerial filming<span>↗</span></a>
+    </div>
+    <div class="ed" style="border-bottom:0"><div class="y">Side output</div><div class="s">
+      <strong>100+ non-forked repositories</strong>
+      <span>~1k commits a year alongside full-time work</span></div></div>
+  </div>
+</div>

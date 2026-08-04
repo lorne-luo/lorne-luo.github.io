@@ -1,12 +1,11 @@
 {% for item in include.content %}
-<div class="row clearfix showcase-item">
-  <div class="col-md-8">
-      <img class="image" src="{{ item.image }}">
+<div class="showcase-item">
+  <div class="image">
+    <img src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}">
   </div>
-  <div class="col-md-4 description">
-    <h1 class="center title">{{ item.title }}</h1>
-    {{ item.description }}
+  <div class="description">
+    <h3 class="title">{{ item.title }}</h3>
+    {{ item.description | markdownify }}
   </div>
 </div>
-<br/>
 {% endfor %}

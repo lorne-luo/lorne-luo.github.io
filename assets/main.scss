@@ -2,46 +2,205 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
-@import 'modern-resume-theme';
+/* ============================================================
+   Swiss Monochrome / Datasheet theme — ported from
+   design-demos/D-swiss-datasheet.html (approved direction D)
+   ============================================================ */
 
-p.quote {
-    text-align: left;
-    font-size: 1.6rem;
+:root{
+  --w:#fff; --k:#000;
+  --g1:#111; --g2:#454545; --g3:#757575; --g4:#B8B8B8;
+  --line:#000; --hair:#E4E4E4; --tint:#FAFAFA;
+  --blue:#0000EE;
+  --sans:'Geist',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --mono:'Geist Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;border-radius:0}
+body{margin:0;background:var(--w);color:var(--k);font-family:var(--sans);
+  font-size:14.5px;line-height:1.55;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.018em}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--g3)}
+.page{max-width:1240px;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+
+/* ── sticky bar ─────────────────────────────────────── */
+.bar{position:sticky;top:0;z-index:9;background:var(--w);border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:1fr auto;align-items:center;padding:0 20px;height:46px}
+.bar .id{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.02em}
+.bar nav{display:flex;gap:0}
+.bar nav a{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  padding:0 13px;height:46px;display:flex;align-items:center;border-left:1px solid var(--hair);
+  color:var(--g2)}
+.bar nav a:hover{background:var(--k);color:var(--w)}
+
+/* ── head block: 12-col cell matrix ─────────────────── */
+.head{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--line)}
+.head .name{grid-column:span 7;padding:34px 20px 26px;border-right:1px solid var(--line)}
+.head .name h1{font-size:clamp(38px,4.6vw,58px);line-height:1.0;font-weight:700;letter-spacing:-.035em}
+.head .name .spec{margin-top:14px;font-size:18px;line-height:1.4;color:var(--g1);max-width:30ch}
+.head .name .spec b{font-weight:600}
+.head .name .arrow{margin-top:20px;display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  border-bottom:1px solid var(--k);padding-bottom:2px}
+.head .idcard{grid-column:span 5;display:grid;grid-template-columns:1fr 1fr}
+.head .idcard>div{padding:16px 18px;border-bottom:1px solid var(--hair)}
+.head .idcard>div:nth-child(even){border-left:1px solid var(--hair)}
+.head .idcard>div:nth-last-child(-n+2){border-bottom:0}
+.head .idcard p{margin:5px 0 0;font-size:13.5px;line-height:1.45;color:var(--g1)}
+.head .idcard a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+
+/* ── spec figures ───────────────────────────────────── */
+.specs{display:grid;grid-template-columns:repeat(6,1fr);border-bottom:1px solid var(--line)}
+.specs>div{padding:16px 16px 18px;border-right:1px solid var(--hair)}
+.specs>div:last-child{border-right:0}
+.specs b{display:block;font-family:var(--mono);font-weight:500;font-size:25px;letter-spacing:-.05em;
+  line-height:1;margin-top:10px;font-variant-numeric:tabular-nums}
+.specs p{margin:7px 0 0;font-size:12px;line-height:1.4;color:var(--g2)}
+
+/* ── section bar ────────────────────────────────────── */
+.sec{display:grid;grid-template-columns:1fr auto;align-items:center;
+  border-bottom:1px solid var(--line);background:var(--tint);padding:9px 20px}
+.sec h2{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase}
+
+/* ── changelog experience ───────────────────────────── */
+.log{border-bottom:1px solid var(--line)}
+.rel{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--hair)}
+.rel:last-child{border-bottom:0}
+.rel .when{padding:20px;border-right:1px solid var(--hair);background:var(--tint)}
+.rel .when .mono{display:block;font-size:12.5px;font-weight:500}
+.rel .when .k{margin-top:7px;display:block}
+.rel .when img{width:26px;height:26px;object-fit:contain;margin-top:14px;display:block}
+.rel .what{padding:20px 20px 24px;min-width:0}
+.rel .hd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.rel h3{font-size:19px}
+.rel .tagrole{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--k);padding:2px 7px}
+.rel .ctx{margin:10px 0 12px;color:var(--g2);max-width:80ch}
+.rel .ctx b{color:var(--k);font-weight:600}
+ul.ch{list-style:none;margin:0;padding:0}
+ul.ch li{display:grid;grid-template-columns:74px 1fr;gap:12px;padding:5px 0;
+  border-top:1px dotted var(--hair);align-items:baseline}
+ul.ch li:first-child{border-top:1px solid var(--hair);padding-top:9px}
+ul.ch li .t{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--g3);
+  padding-top:2px}
+ul.ch li .d{color:var(--g1);max-width:82ch}
+ul.ch li .d b{font-weight:600}
+a.ref{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-family:var(--mono);
+  font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);
+  text-decoration:underline;text-underline-offset:3px}
+
+/* ── work table ─────────────────────────────────────── */
+table.wk{width:100%;border-collapse:collapse;border-bottom:1px solid var(--line)}
+table.wk th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--g3);font-weight:400;padding:9px 14px;
+  border-bottom:1px solid var(--line);background:var(--tint)}
+table.wk td{padding:14px;border-bottom:1px solid var(--hair);vertical-align:top;font-size:13.5px;
+  color:var(--g1)}
+table.wk tr:last-child td{border-bottom:0}
+table.wk td.n{width:34px;font-family:var(--mono);font-size:11px;color:var(--g3)}
+table.wk td.nm{width:210px}
+table.wk td.nm strong{display:block;font-size:16px;font-weight:600;letter-spacing:-.015em;margin-bottom:3px}
+table.wk td.nm .k{display:block}
+table.wk td.dt b{font-weight:600;color:var(--k)}
+table.wk td.dt ul{list-style:none;margin:7px 0 0;padding:0}
+table.wk td.dt ul li{position:relative;padding-left:14px;margin-bottom:4px;color:var(--g2)}
+table.wk td.dt ul li:before{content:"›";position:absolute;left:0;color:var(--g4)}
+table.wk td.st{width:150px}
+.marks{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.marks img{width:15px;height:15px;opacity:.6}
+.arch{padding:16px 20px 20px;border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.arch p{margin:6px 0 0;font-size:13px;color:var(--g2)}
+.arch p b{color:var(--k);font-weight:600}
+
+/* ── capability matrix ──────────────────────────────── */
+.cap{border-bottom:1px solid var(--line)}
+.cap .r{display:grid;grid-template-columns:170px 1fr;border-bottom:1px solid var(--hair)}
+.cap .r:last-child{border-bottom:0}
+.cap .r>.k{padding:13px 18px;border-right:1px solid var(--hair);background:var(--tint);
+  display:flex;align-items:center;color:var(--k)}
+.cap .r>.v{padding:11px 18px;display:flex;flex-wrap:wrap;gap:6px}
+.u{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border:1px solid var(--hair);
+  font-size:12.5px;line-height:1.3}
+.u img{width:13px;height:13px;opacity:.7}
+
+/* ── education / misc ───────────────────────────────── */
+.two{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.two>div{padding:0}
+.two>div:first-child{border-right:1px solid var(--line)}
+.ed{display:grid;grid-template-columns:118px 1fr;border-bottom:1px solid var(--hair);
+  padding:0}
+.ed:last-child{border-bottom:0}
+.ed .y{padding:13px 18px;border-right:1px solid var(--hair);font-family:var(--mono);font-size:11.5px;
+  color:var(--g2);font-variant-numeric:tabular-nums}
+.ed .s{padding:13px 18px}
+.ed .s strong{display:block;font-size:15.5px;font-weight:600}
+.ed .s span{font-size:13px;color:var(--g2)}
+.ed .s em{display:block;margin-top:5px;font-size:12.5px;color:var(--g3);font-style:normal}
+.off{display:grid;grid-template-columns:1fr 1fr}
+.off a{padding:13px 18px;border-bottom:1px solid var(--hair);font-size:13.5px;color:var(--g1);
+  display:flex;justify-content:space-between;align-items:center;gap:10px}
+.off a:nth-child(even){border-left:1px solid var(--hair)}
+.off a:hover{background:var(--k);color:var(--w)}
+.off a span{font-family:var(--mono);font-size:12px;color:inherit;opacity:.5}
+
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:14px 20px}
+
+/* ── sub-pages (employment / project showcase) ──────── */
+/* Not full 1:1 parity with D — reuses D's cell/hairline language at a
+   simpler grain since these pages render a variable-length image+text list
+   rather than a fixed datasheet. */
+.showcase-grid{border-bottom:1px solid var(--line)}
+.showcase-item{display:grid;grid-template-columns:340px 1fr;border-bottom:1px solid var(--hair)}
+.showcase-item:last-child{border-bottom:0}
+.showcase-item .image{border-right:1px solid var(--hair);background:var(--tint);
+  display:flex;align-items:center;justify-content:center;padding:12px}
+.showcase-item .image img{width:100%;height:auto;display:block;object-fit:contain}
+.showcase-item .description{padding:20px 22px}
+.showcase-item .description h3,
+.showcase-item .description .title{font-size:18px;margin-bottom:10px}
+.showcase-item .description ul{margin:6px 0;padding-left:16px;color:var(--g2)}
+.showcase-item .description p{margin:0 0 8px;color:var(--g1)}
+
+/* ── responsive ─────────────────────────────────────── */
+@media(max-width:1000px){
+  .page{border-left:0;border-right:0}
+  .bar nav{display:none}
+  .head{grid-template-columns:1fr}
+  .head .name{grid-column:auto;border-right:0;border-bottom:1px solid var(--line)}
+  .head .idcard{grid-column:auto}
+  .specs{grid-template-columns:1fr 1fr 1fr}
+  .specs>div:nth-child(3n){border-right:0}
+  .specs>div:nth-child(n+4){border-top:1px solid var(--hair)}
+  .rel{grid-template-columns:1fr}
+  .rel .when{border-right:0;border-bottom:1px solid var(--hair);display:flex;gap:16px;align-items:center}
+  .rel .when img{margin-top:0}
+  table.wk td.st,table.wk th.st{display:none}
+  table.wk td.nm{width:auto}
+  .arch{grid-template-columns:1fr 1fr}
+  .cap .r{grid-template-columns:1fr}
+  .cap .r>.k{border-right:0;border-bottom:1px solid var(--hair)}
+  .two{grid-template-columns:1fr}
+  .two>div:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  .showcase-item{grid-template-columns:1fr}
+  .showcase-item .image{border-right:0;border-bottom:1px solid var(--hair)}
 }
 
-a {
-    color: inherit;
-}
-
-h5{font-weight:300;font-size:2rem;margin-bottom:3px}
-
-a.link {
-    color: #39f;
-}
-
-.showcase-item {
-    margin-top:20px;
-    margin-bottom:20px;
-    font-size: 20px;
-}
-
-.showcase-item .title{
-    margin-bottom:10px;
-    font-size: 35px;
-}
-.showcase-item ul{
-    font-size: 20px;
-}
-
-.showcase-item .image {
-    border: 4px solid #aaa;
-    border-radius: 15px;
-}
-
-.showcase-item .description {
-    font-size: 20px;
-}
-
-.center {
-    text-align: center;
+/* ── print / PDF ────────────────────────────────────── */
+@media print{
+  @page{size:A4;margin:10mm}
+  body{font-size:8.9pt;line-height:1.36}
+  .page{max-width:none;border:0}
+  .bar,a.ref{display:none}
+  .head .name h1{font-size:26pt}
+  .head .name .spec{font-size:11pt}
+  .head .name .arrow{display:none}
+  .specs b{font-size:14pt}
+  .sec,.rel,.ed,table.wk tr,.cap .r{break-inside:avoid}
+  .sec{background:#F0F0F0}
+  .rel .when,.cap .r>.k,table.wk th{background:#F5F5F5}
+  footer{padding:10px 0}
 }
