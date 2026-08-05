@@ -1,35 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-
-{%- include head.html -%}
-
-<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
-
-  {%- include header.html -%}
-
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      <div class="container intro-container">
-        <h3 id="about-me" style="text-align:center;font-size:50px"><b>{{ page.title | escape }}</b></h3>
-        <div class="row clearfix">
-          <h5>
-            {{ page.description }}
-          </h5>
-        </div>
-        <br/>
-        
-        <div class="row clearfix">
-            {% include section-showcase.html content=page.items %}
-        </div>
-        
-      </div>
-    </div>
-  </main>
-
-  {%- include footer.html -%}
-  {% if site.darkmode == false %}
-    <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
-  {% endif %}
-</body>
-
-</html>
+---
+layout: default
+---
+<div class="head">
+  <div class="name" style="grid-column:span 12;border-right:0">
+    <span class="k">Project showcase</span>
+    <h1>{{ page.title | escape }}</h1>
+    <div class="spec">{{ page.description }}</div>
+  </div>
+</div>
+<div class="sec"><h2>Detail</h2><span class="k">{{ page.items | size }} items</span></div>
+<div class="showcase-grid">
+  {% include section-showcase.html content=page.items %}
+</div>
