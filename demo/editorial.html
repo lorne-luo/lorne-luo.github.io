@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lorne Luo — Data / DevOps Engineer (Direction 1: Editorial)</title>
+<meta name="description" content="Lorne Luo, senior Data / DevOps / Full-Stack Engineer. Experience, projects, education and contact.">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --paper:#F5F2EC; --ink:#1C1D1F; --muted:#5D5A55; --rule:#DDD7CC; --accent:#2C4A73;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"P052","Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Liberation Sans",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans)}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px}
+.skip:focus{left:8px;z-index:10}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px}
+.rail{position:sticky;top:0;height:100vh;padding:72px 0 36px;display:flex;flex-direction:column}
+.who{display:flex;gap:20px;align-items:center}
+.who img{width:72px;height:72px;border-radius:50%;border:1px solid var(--rule);background:#fff}
+h1{font:600 52px/1.05 var(--serif);letter-spacing:-.01em;margin:0}
+.role{font:400 22px/1.35 var(--serif);margin:22px 0 10px;color:var(--ink)}
+.lede{color:var(--muted);max-width:30em;margin:0}
+.glance{list-style:none;margin:26px 0 0;padding:14px 0 0;border-top:1px solid var(--rule)}
+.glance li{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:baseline}
+.glance span{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.glance a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font:600 17px/1.3 var(--serif);text-decoration:none}
+.glance a:hover{color:var(--accent);text-decoration:underline}
+.entry{scroll-margin-top:24px}
+.toc{margin:28px 0 0;padding:0;list-style:none}
+.toc a{display:flex;align-items:center;gap:14px;padding:0;min-height:44px;color:var(--muted);text-decoration:none;font-size:15px}
+.toc a::before{content:"";width:28px;height:1px;background:currentColor;transition:width .2s}
+.toc a:hover,.toc a.on{color:var(--ink)}
+.toc a.on::before{width:56px;background:var(--accent)}
+.contact-mini{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px}
+.contact-mini a{display:inline-flex;align-items:center;min-height:44px}
+
+main{padding:72px 0 40px;min-width:0}
+section{scroll-margin-top:32px;padding-bottom:72px}
+h2{font:600 15px/1.2 var(--sans);color:var(--muted);margin:0 0 28px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.about p{font:400 19px/1.65 var(--serif);margin:0 0 18px}
+.about ul{margin:0;padding-left:1.1em;color:var(--ink)}
+.about li{margin:6px 0}
+code,.num{font-family:inherit;font-weight:600}
+
+.entry{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.entry:last-child{border-bottom:0}
+.when{font-size:14px;color:var(--muted);padding-top:4px;font-variant-numeric:tabular-nums}
+.entry h3{font:600 22px/1.25 var(--serif);margin:0}
+.entry .pos{margin:4px 0 0;font-weight:600}
+.entry .meta{margin:4px 0 0;color:var(--muted);font-size:14px}
+.entry .ctx{color:var(--muted);margin:10px 0 0}
+.entry ul{margin:12px 0 0;padding-left:1.1em}
+.entry li{margin:6px 0}
+.entry .stack{margin:12px 0 0;color:var(--muted);font-size:15px}
+.entry .more{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;font-size:15px}
+details summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--accent);font-size:15px}
+details summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.proj-group{margin:0 0 12px;font:600 18px/1.3 var(--serif)}
+.proj{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.proj .kind{font-size:14px;color:var(--muted);padding-top:3px}
+.proj h3{font:600 20px/1.3 var(--serif);margin:0}
+.proj p{margin:6px 0 0}
+.proj .stack{color:var(--muted);font-size:15px}
+.links{display:flex;flex-wrap:wrap;gap:0 18px;font-size:15px}
+.links a{display:inline-flex;align-items:center;min-height:44px}
+.feature h3{font:600 22px/1.25 var(--serif);margin:0}
+.feature p{margin:6px 0 0}
+.feature ul{margin:10px 0 0;padding-left:1.1em}
+.feature li{margin:6px 0}
+.feature{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:20px 0 26px;border-bottom:1px solid var(--rule)}
+.feature figure{margin:12px 0 0}
+.feature img{width:100%;height:auto;display:block;border:1px solid var(--rule);background:#fff}
+.feature figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+.spacer{height:32px}
+
+.interests{display:flex;flex-wrap:wrap;gap:4px 26px;padding:0;margin:0;list-style:none}
+.interests a{display:inline-flex;align-items:center;min-height:44px}
+.contact-big p{font:400 26px/1.35 var(--serif);margin:0 0 10px}
+.contact-big .row{display:flex;flex-wrap:wrap;gap:4px 28px}
+.contact-big .row a{display:inline-flex;align-items:center;min-height:44px}
+footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (min-width:961px) and (max-height:840px){
+  .rail{margin-inline:-5px;padding:24px 5px 16px;overflow-y:auto}
+  .toc{margin-top:16px}
+}
+@media (max-width:960px){
+  .wrap{grid-template-columns:1fr;gap:0;padding:0 22px}
+  .rail{position:static;height:auto;padding:40px 0 8px}
+  h1{font-size:40px}
+  .role{font-size:20px}
+  .toc{display:flex;flex-wrap:wrap;gap:0 13px;margin-top:20px}
+  .toc a{font-size:14.5px}
+  .toc a::before{display:none}
+  .contact-mini{margin-top:12px}
+  main{padding-top:24px}
+  section{padding-bottom:52px}
+  .about p{font-size:18px}
+  .entry,.proj,.feature{grid-template-columns:1fr;gap:4px}
+  .when,.proj .kind{padding-top:0}
+  .contact-big p{font-size:22px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<div class="wrap">
+  <header class="rail">
+    <div class="who">
+      <img src="assets/img/avatar.webp" width="72" height="72" alt="Illustrated avatar of Lorne Luo">
+      <div><h1>Lorne Luo</h1></div>
+    </div>
+    <p class="role">Senior Data / DevOps / Full-Stack Engineer</p>
+    <p class="lede">Data pipelines, AWS serverless, CI/CD and web platforms.</p>
+    <ol class="glance" aria-label="Career at a glance">
+      <li><span>2024–Present</span><a href="#selfwealth">Selfwealth</a></li>
+      <li><span>2020–2024</span><a href="#lob">Leighton O’Brien / Titan Cloud</a></li>
+      <li><span>2017–2020</span><a href="#butterfly">Butterfly</a></li>
+      <li><span>2015–2017</span><a href="#combitel">Combitel</a></li>
+    </ol>
+    <nav aria-label="Sections">
+      <ul class="toc">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="contact-mini">
+      <a href="mailto:dev@luotao.net">dev@luotao.net</a>
+      <a href="https://github.com/lorne-luo" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/lorne-luo" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="about" aria-labelledby="h-about">
+      <h2 id="h-about">About</h2>
+      <p>Over 15 years of software development in Java, C#, TypeScript and Python, spanning frontend and backend web development, data engineering and science, and DevOps.</p>
+      <ul>
+        <li><span class="num">100+</span> non-forked GitHub repos and an average of <a href="https://cv.luotao.net/images/github_commits.png" target="_blank" rel="noopener">1k commits per year</a> alongside a full-time job.</li>
+        <li>AI embracer: runs a YouTube channel of videos generated automatically with ChatGPT, Whisper, Stable Diffusion, UVR5, Real-ESRGAN, Wav2lip and more.</li>
+      </ul>
+    </section>
+
+    <section id="experience" aria-labelledby="h-exp">
+      <h2 id="h-exp">Experience</h2>
+
+      <article class="entry" id="selfwealth">
+        <div class="when">Aug 2024 –<br>Present</div>
+        <div>
+          <h3>Selfwealth</h3>
+          <p class="pos">Data ETL Engineer</p>
+          <p class="meta">Full-time · Melbourne, Victoria, Australia · Hybrid</p>
+          <p class="ctx">Core engineer on Selfwealth’s B2B Datafeed Platform, a serverless data platform that delivers brokerage data to financial advisers and portfolio administration platforms.</p>
+          <ul>
+            <li>Built a platform that ingests trades, holdings, cash, income and FX data from the core trading database (MSSQL), ANZ files and Phillip Capital (US/HK) files into a unified Aurora PostgreSQL model, then delivers the data to Iress XPLAN, BGL and Class Super.</li>
+            <li>Designed a configuration-driven export engine that supports EPI XML and CSV, multiple currencies, trade status rules, history windows and per-adviser layouts. New targets and rules can be added through configuration.</li>
+            <li>Maintained compatibility with legacy broker file formats and international trading history dating back to 2020.</li>
+            <li>Orchestrated ingestion, export and SFTP delivery with AWS Step Functions and Lambda, alongside reconciliation, client consent and contract note workflows.</li>
+            <li>Maintained data quality and deployment reliability with comprehensive pytest coverage, Alembic migrations, GitHub Actions and AWS SAM for CI/CD, and Datadog monitoring.</li>
+          </ul>
+          <p class="stack"><strong>Tech</strong> · Python, AWS Lambda, Step Functions, S3, PostgreSQL, MSSQL, SQLAlchemy, Alembic, Pydantic, GitHub Actions, Datadog</p>
+        </div>
+      </article>
+
+      <article class="entry" id="lob">
+        <div class="when">Apr 2020 –<br>May 2024</div>
+        <div>
+          <h3>Leighton O’Brien / Titan Cloud</h3>
+          <p class="pos">Senior Data Engineer / DevOps</p>
+          <p class="ctx">Fuel analytics and field technologies for 20k+ fuel stations worldwide, ingesting billions of IoT records per month. In the wetstock data engineering team I architected internal ETL processes and reporting portals, and introduced practices that made delivery more reliable.</p>
+          <ul>
+            <li>Modernised hundreds of Python 2 cron jobs into a Python 3 Airflow cluster; unified 6 untracked copies of the code base into one repo.</li>
+            <li>Lead architect converting the wetstock analysis IP from Excel/VBS to a Java/Python AWS serverless service (Lambda, SQS, Kinesis, Glue, Redshift, Athena) with 10x better efficiency.</li>
+            <li>Restructured the S3 data lake, refined data mapping/validation and created a data archiving plan.</li>
+          </ul>
+          <details>
+            <summary>6 more highlights</summary>
+            <ul>
+              <li>Built CI/CD pipelines with Jenkins, GitHub Actions, Bash, PowerShell, AWS SSM and EventBridge for deployment, data transfer and provisioning.</li>
+              <li>Automated duplicating the QA environment from production data fragments, speeding up dev and integration testing.</li>
+              <li>Integrated Auth0 into reporting services in Java and C#; migrated user accounts and supported user management.</li>
+              <li>Maintained data-ingestion Docker images across operating systems and architectures, and helped clients deploy them to fuel stations.</li>
+              <li>Managed and monitored 80+ Linux EC2 servers with Prometheus, Grafana, Icinga, Ansible, CloudFormation and Terraform.</li>
+              <li>Created REST APIs and front pages in FastAPI, Flask and Angular to support the Yellowfin BI platform.</li>
+            </ul>
+          </details>
+          <a class="more" href="https://cv.luotao.net/employment/lob/">Showcases from this role</a>
+        </div>
+      </article>
+
+      <article class="entry" id="butterfly">
+        <div class="when">Jul 2017 –<br>Apr 2020</div>
+        <div>
+          <h3>Butterfly</h3>
+          <p class="pos">Senior Full Stack Developer</p>
+          <p class="ctx">A leading Australian web development agency, recognised with 64 website design awards.</p>
+          <ul>
+            <li>Developed high-value international web applications as prime back-end developer.</li>
+            <li>Owned the SDLC end to end: analysis, coding, testing, CI/CD and hotfixes in cloud environments.</li>
+            <li>Python and back-end expert for the team; maintained reusable libraries and a standard starter repository.</li>
+            <li>Firefighter for urgent deadlines and thorny projects; hosted an Opensource-Insight channel in the team Slack.</li>
+          </ul>
+          <a class="more" href="https://cv.luotao.net/employment/butterfly/">Showcases from this role</a>
+        </div>
+      </article>
+
+      <article class="entry" id="combitel">
+        <div class="when">Mar 2015 –<br>Feb 2017</div>
+        <div>
+          <h3>Combitel</h3>
+          <p class="pos">Full Stack Developer</p>
+          <p class="ctx">Large-scale, high-availability IPTV package solutions.</p>
+          <ul>
+            <li>Dev/Ops for IPTV middleware delivering managed multimedia content to multiple devices.</li>
+            <li>Focused on service-side architecture design and programming.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="projects" aria-labelledby="h-proj">
+      <h2 id="h-proj">Projects</h2>
+
+      <h3 class="proj-group">Data science &amp; AI</h3>
+
+      <article class="feature">
+        <div class="when">Leighton O’Brien</div>
+        <div>
+          <h3>Enterprise Petroleum Service (iHub)</h3>
+          <p>Petroleum industry service: real-time inventory, alarm management, monitoring and reporting, backed by an AWS data pipeline processing millions of IoT records per day.</p>
+          <ul>
+            <li>Proposed and set up a 7-node Airflow cluster, replacing 600+ Python 2 cron jobs with Python 3 DAGs.</li>
+            <li>Integrated Auth0 with 3 production services for 6 clients, migrating hundreds of users.</li>
+            <li>With the data scientist, migrated Excel/VBS analytical IP into Python (Pandas / PySpark) — <a href="https://cv.luotao.net/showcase/2024/04/29/fuse.html">Project Fuse</a>.</li>
+            <li>Designed a serverless client-metadata management system with web UI and API.</li>
+            <li>10+ tech wiki pages and skill-share talks, e.g. <a href="https://docs.google.com/presentation/d/e/2PACX-1vRt0M-7vtCmvnr38hKsjtzPE1Y_uIedUxbZwFv-3BIEvH9NB0rFe8OzvNzzcQ_DJdPWeMwJbVLbZPys/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank" rel="noopener">Advanced Git</a> and <a href="https://docs.google.com/presentation/d/e/2PACX-1vTNimnu1UlgmVXTyRTLg1xI37UNUqADgQXLFSvhc6d0cz9Bo9_hbWxd-vIXTGhOFjL5Q_55Ji1AKWlH/pub?start=true&amp;loop=false&amp;delayms=5000" target="_blank" rel="noopener">TDD and How to</a>.</li>
+          </ul>
+          <figure>
+            <img src="assets/img/fuse-architecture.webp" width="1400" height="860" loading="lazy" alt="Project Fuse AWS architecture diagram">
+            <figcaption>Project Fuse: daily analysis for 20k sites in 30 seconds, down from 2 hours (from the Fuse showcase).</figcaption>
+          </figure>
+          <div class="links">
+            <a href="https://cv.luotao.net/showcase/2024/04/29/fuse.html">Project Fuse showcase</a>
+            <a href="https://www.leightonobrien.com/wp-content/uploads/2023/09/iHUB-flyer-Leighton-OBrien-Fuel-Management.pdf" target="_blank" rel="noopener">iHub product brochure (PDF)</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="kind">Machine learning</div>
+        <div>
+          <h3>PoolHub</h3>
+          <p>Machine learning that helps pool-shop customers read the values on pool test strips.</p>
+          <p class="stack">Collected labelled strip photos, trained a YOLOv8 detector, normalised brightness and colour balance, and trained 7 supervised models to predict the readings.</p>
+          <div class="links"><a href="https://cv.luotao.net/showcase/2024/04/29/poolhub.html">PoolHub showcase</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="kind">Generative AI</div>
+        <div>
+          <h3>Orpheus</h3>
+          <p>Automatically generates videos, karaoke tracks and subtitles for music and publishes them to YouTube.</p>
+          <p class="stack">ChatGPT, Stable Diffusion, Real-ESRGAN, Wav2lip, FFmpeg, UVR5, Whisper, Librosa.</p>
+          <div class="links"><a href="https://www.youtube.com/channel/UCa9BFIWwR2y5L8neMgZWyXA" target="_blank" rel="noopener">YouTube channel</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="kind">Quant / data</div>
+        <div>
+          <h3>Hawkeye</h3>
+          <p>Weekly decision-making system for ASX shares, ranking return–risk balance with a Monte Carlo stochastic approach.</p>
+          <p class="stack">Python, Kinesis, Airflow, DynamoDB, Lambda, Redis, Django, TA-Lib, Pandas, NumPy, Matplotlib, Seaborn.</p>
+          <div class="links"><a href="http://hawkeye.luotao.net" target="_blank" rel="noopener">hawkeye.luotao.net</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="kind">Trading platform</div>
+        <div>
+          <h3>QSForex</h3>
+          <p>Event-driven forex trading platform: tick-level price streaming, pluggable strategies and event handlers, instant notification, order history, and a broker interface that is easy to replace.</p>
+          <p class="stack">Python, EC2, Jupyter, TA-Lib, Pandas, NumPy, Matplotlib, scikit-learn, Optunity, Keras.</p>
+        </div>
+      </article>
+
+      <div class="spacer"></div>
+      <h3 class="proj-group">Web applications</h3>
+
+      <article class="proj">
+        <div class="kind">E-commerce &amp; certification</div>
+        <div>
+          <h3>Monash FODMAP</h3>
+          <p>International site for the Monash University Low FODMAP Diet: public site, blog, e-commerce, course enrolment and recipe certification.</p>
+          <p class="stack">Started as a contractor and wrote 60% of the code in 6 months; built two-way Django ↔ Salesforce sync and the core certification workflow; model-driven development cut new-project effort by 20–40%.</p>
+          <div class="links">
+            <a href="https://cv.luotao.net/projects/monash-fodmap/">Monash FODMAP showcase</a>
+            <a href="https://www.monashfodmap.com" target="_blank" rel="noopener">monashfodmap.com</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="kind">Telemedicine</div>
+        <div>
+          <h3>Medechat</h3>
+          <p>Veterinary telemedicine platform for veterinarians, specialists and customers.</p>
+          <p class="stack">GraphQL (Graphene) + Celery + React; model-driven development saved about 20% of development time.</p>
+          <div class="links"><a href="https://www.medechat.com.au" target="_blank" rel="noopener">medechat.com.au</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="kind">E-commerce</div>
+        <div>
+          <h3>Reform Clothing</h3>
+          <p>Custom-made apparel from design to delivery.</p>
+          <p class="stack">Tuned Django DRF APIs (around 95% less response time), built the React custom apparel designer, and real-time callbacks from the Salesforce sync middleware.</p>
+          <div class="links"><a href="https://www.reformclothing.com" target="_blank" rel="noopener">reformclothing.com</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="kind">Digital signage</div>
+        <div>
+          <h3>OmniScreen Pilot</h3>
+          <p>Enterprise TV and digital-signage server, as an appliance or a cloud SaaS.</p>
+          <p class="stack">Distributed TV device management with Django + Celery, FFmpeg encoding and EPG streaming, CI/CD with Jenkins, Docker and SaltStack.</p>
+          <div class="links"><a href="http://omniscreen.com.au" target="_blank" rel="noopener">omniscreen.com.au</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="kind">Order management</div>
+        <div>
+          <h3>OZSales</h3>
+          <p>Multi-tenant order and logistics management: customers, orders, delivery, tracking and reporting.</p>
+          <p class="stack">Django, Celery, Postgres, Vue.js.</p>
+          <div class="links">
+            <a href="https://cv.luotao.net/images/ozsales.png" target="_blank" rel="noopener">Screenshots</a>
+            <a href="http://s.luotao.net" target="_blank" rel="noopener">s.luotao.net</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="education" aria-labelledby="h-edu">
+      <h2 id="h-edu">Education</h2>
+      <article class="entry">
+        <div class="when">2010 – 2014</div>
+        <div>
+          <h3>Beihang University, China</h3>
+          <p class="pos">Software Engineering, PhD studies</p>
+          <p class="ctx">One of the top three computer science universities in China. Left after four years of study to migrate to Australia.</p>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="when">2007 – 2010</div>
+        <div>
+          <h3>Hebei University of Technology, China</h3>
+          <p class="pos">Software Engineering, MS</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="more" aria-labelledby="h-more">
+      <h2 id="h-more">A little more</h2>
+      <ul class="interests">
+        <li><a href="https://www.dreamstime.com/luotao_info#res6109850" target="_blank" rel="noopener">Photography</a></li>
+        <li><a href="https://www.youtube.com/@user-yg1zb6xb3j/videos" target="_blank" rel="noopener">YouTube channel</a></li>
+        <li><a href="https://youtu.be/w4rGUOMeu8I" target="_blank" rel="noopener">Snowboarding</a></li>
+        <li><a href="https://youtu.be/Xm2Yx8Oiwvc" target="_blank" rel="noopener">Drone aerial filming</a></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact-big" aria-labelledby="h-contact">
+      <h2 id="h-contact">Contact</h2>
+      <p>Write to <a href="mailto:dev@luotao.net">dev@luotao.net</a></p>
+      <div class="row">
+        <a href="https://github.com/lorne-luo" target="_blank" rel="noopener">github.com/lorne-luo</a>
+        <a href="https://www.linkedin.com/in/lorne-luo" target="_blank" rel="noopener">linkedin.com/in/lorne-luo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Lorne Luo · References available on request</span>
+    <span>Editorial demo · <a href="index.html">Compare demos</a></span>
+  </footer>
+</div>
+<script>
+(function(){
+  // Highlight the nav item of the section that crosses 35% of the viewport height.
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  var ticking=false;
+  function update(){
+    ticking=false;
+    var line=innerHeight*0.35, cur=-1;
+    secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=line)cur=i;});
+    links.forEach(function(a,i){
+      var on=i===cur; a.classList.toggle('on',on);
+      if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
+    });
+  }
+  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
+  addEventListener('resize',update);
+  update();
+})();
+</script>
+</body>
+</html>
