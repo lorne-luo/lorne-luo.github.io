@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,135 +7,966 @@
 <meta name="description" content="Lorne Luo, senior Data / DevOps / Full-Stack Engineer. Experience, projects, education and contact.">
 <link rel="canonical" href="https://cv.luotao.net/">
 <link rel="icon" href="/images/favicon.ico">
+<link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-:root{
-  --paper:#F5F2EC; --ink:#1C1D1F; --muted:#5D5A55; --rule:#DDD7CC; --accent:#2C4A73;
-  --nav-bg:#E5EBF2; --nav-hover:#D6E2EF; --nav-border:#C2D0E0;
-  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"P052","Book Antiqua",Georgia,serif;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Liberation Sans",Arial,sans-serif;
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans)}
-a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
-a:hover{text-decoration-thickness:2px}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px}
-.skip:focus{left:8px;z-index:10}
-
-.wrap{max-width:1240px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px}
-.rail{position:sticky;top:0;height:100vh;padding:72px 0 36px;display:flex;flex-direction:column}
-.who{display:flex;gap:20px;align-items:center}
-.who img{width:72px;height:72px;border-radius:50%;border:1px solid var(--rule);background:#fff}
-h1{font:600 52px/1.05 var(--serif);letter-spacing:-.01em;margin:0}
-.role{font:400 22px/1.35 var(--serif);margin:22px 0 10px;color:var(--ink)}
-.lede{color:var(--muted);max-width:30em;margin:0}
-.current-role{margin:8px 0 0;font-size:15px}
-.current-role a{display:inline-flex;align-items:center;min-height:44px;text-decoration-thickness:1px;font-weight:600}
-.current-role a:hover{text-decoration-thickness:2px}
-.entry{scroll-margin-top:24px}
-.toc{display:grid;gap:8px;max-width:15rem;margin:18px 0 0;padding:0;list-style:none}
-.toc a{
-  display:flex;align-items:center;min-height:44px;padding:0 14px;
-  border:1px solid var(--nav-border);border-radius:6px;background:var(--nav-bg);
-  color:var(--accent);font-size:15px;font-weight:600;text-decoration:none;
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-.toc a:hover{background:var(--nav-hover);border-color:var(--accent)}
-.toc a[aria-current="location"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.contact-mini{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px}
-.contact-mini a{display:inline-flex;align-items:center;min-height:44px}
-
-main{padding:72px 0 40px;min-width:0}
-section{scroll-margin-top:32px;padding-bottom:72px}
-h2{font:600 15px/1.2 var(--sans);color:var(--muted);margin:0 0 28px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
-.about p{font:400 19px/1.65 var(--serif);margin:0 0 18px}
-.about ul{margin:0;padding-left:1.1em;color:var(--ink)}
-.about li{margin:6px 0}
-code,.num{font-family:inherit;font-weight:600}
-
-.entry{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--rule)}
-.entry:last-child{border-bottom:0}
-.when{font-size:14px;color:var(--muted);padding-top:4px;font-variant-numeric:tabular-nums}
-.entry h3{font:600 22px/1.25 var(--serif);margin:0}
-.entry .pos{margin:4px 0 0;font-weight:600}
-.entry .meta{margin:4px 0 0;color:var(--muted);font-size:14px}
-.entry .ctx{color:var(--muted);margin:10px 0 0}
-.entry ul{margin:12px 0 0;padding-left:1.1em}
-.entry li{margin:6px 0}
-.entry .stack{margin:12px 0 0;color:var(--muted);font-size:15px}
-.entry .more{display:inline-flex;align-items:center;min-height:44px;margin-top:4px;font-size:15px}
-details summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--accent);font-size:15px}
-details summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-.proj-group{margin:0 0 12px;font:600 18px/1.3 var(--serif)}
-.proj{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:18px 0;border-bottom:1px solid var(--rule)}
-.proj .kind{font-size:14px;color:var(--muted);padding-top:3px}
-.proj h3{font:600 20px/1.3 var(--serif);margin:0}
-.proj p{margin:6px 0 0}
-.proj .stack{color:var(--muted);font-size:15px}
-.links{display:flex;flex-wrap:wrap;gap:0 18px;font-size:15px}
-.links a{display:inline-flex;align-items:center;min-height:44px}
-.feature h3{font:600 22px/1.25 var(--serif);margin:0}
-.feature p{margin:6px 0 0}
-.feature ul{margin:10px 0 0;padding-left:1.1em}
-.feature li{margin:6px 0}
-.feature{display:grid;grid-template-columns:132px minmax(0,1fr);gap:24px;padding:20px 0 26px;border-bottom:1px solid var(--rule)}
-.spacer{height:32px}
-
-.interests{display:flex;flex-wrap:wrap;gap:4px 26px;padding:0;margin:0;list-style:none}
-.interests a{display:inline-flex;align-items:center;min-height:44px}
-.contact-big p{font:400 26px/1.35 var(--serif);margin:0 0 10px}
-.contact-big .row{display:flex;flex-wrap:wrap;gap:4px 28px}
-.contact-big .row a{display:inline-flex;align-items:center;min-height:44px}
-footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;font-size:14px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-@media (min-width:961px) and (max-height:840px){
-  .rail{margin-inline:-5px;padding:24px 5px 16px;overflow-y:auto}
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-italic-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-@media (max-width:960px){
-  .wrap{grid-template-columns:1fr;gap:0;padding:0 22px}
-  .rail{position:static;height:auto;padding:40px 0 8px}
-  h1{font-size:40px}
-  .role{font-size:20px}
-  .toc{display:flex;flex-wrap:wrap;max-width:none;margin-top:12px}
-  .toc a{padding-inline:12px;font-size:14px}
-  .contact-mini{margin-top:12px}
-  main{padding-top:24px}
-  section{padding-bottom:52px}
-  .about p{font-size:18px}
-  .entry,.proj,.feature{grid-template-columns:1fr;gap:4px}
-  .when,.proj .kind{padding-top:0}
-  .contact-big p{font-size:22px}
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("assets/fonts/newsreader-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("assets/fonts/ibm-plex-sans-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("assets/fonts/ibm-plex-sans-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --paper: #F9F9F8;
+  --surface: #F2F2EF;
+  --surface-hover: #EAEAE5;
+  --ink: #14161A;
+  --ink-body: #2C3038;
+  --muted: #565B64;
+  --rule: #E3E3DD;
+  --rule-strong: #C6C6BE;
+  --accent: #1D4476;
+  --accent-hover: #132F54;
+  --accent-tint: rgba(29, 68, 118, 0.08);
+  --accent-underline: rgba(29, 68, 118, 0.34);
+  --live: #1F7A53;
+  --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--rule-strong) transparent;
+  scrollbar-width: thin;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink-body);
+  font: 400 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(29, 68, 118, 0.14);
+  color: var(--ink);
+}
+
+a {
+  color: var(--accent);
+  text-decoration-color: var(--accent-underline);
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+  transition: color 140ms ease, text-decoration-color 140ms ease;
+}
+a:hover {
+  color: var(--accent-hover);
+  text-decoration-color: currentColor;
+}
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.ico {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: -0.14em;
+  transition: transform 180ms var(--ease-out);
+}
+.ico-lg { width: 15px; height: 15px; }
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.skip:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+.skip:focus { left: 12px; z-index: 50; }
+
+/* Page shell */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 356px) minmax(0, 1fr);
+  column-gap: 76px;
+}
+
+/* Sticky identity rail */
+.rail {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  min-width: 0;
+  padding: 76px 0 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.who {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.who img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(20, 22, 26, 0.06);
+  flex-shrink: 0;
+}
+
+h1 {
+  font: 500 clamp(2.35rem, 3.3vw, 3rem)/1.02 var(--serif);
+  font-optical-sizing: auto;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.role {
+  font: 400 1.1875rem/1.38 var(--serif);
+  font-optical-sizing: auto;
+  color: var(--ink);
+  margin: 22px 0 8px;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.58;
+  max-width: 32ch;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.current-role {
+  margin: 12px 0 0;
+  font-size: 0.875rem;
+}
+.current-role a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+}
+.current-role a .label {
+  border-bottom: 1px solid var(--accent-underline);
+  padding-bottom: 1px;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+.current-role a:hover .label {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.current-role a:hover .ico {
+  color: var(--accent);
+  transform: translate(1.5px, 1.5px);
+}
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--live);
+  box-shadow: 0 0 0 3px rgba(31, 122, 83, 0.14);
+  flex-shrink: 0;
+}
+
+/* Editorial rail navigation */
+nav[aria-label="CV sections"] {
+  margin-top: 28px;
+}
+
+.toc {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 0 0 16px;
+  list-style: none;
+  border-left: 1px solid var(--rule);
+}
+.toc::before {
+  content: "";
+  position: absolute;
+  left: -1.5px;
+  top: 0;
+  width: 2px;
+  height: var(--toc-h, 24px);
+  background: var(--accent);
+  border-radius: 1px;
+  transform: translateY(var(--toc-y, 10px));
+  opacity: var(--toc-o, 0);
+  transition: transform 260ms var(--ease-out), height 220ms var(--ease-out), opacity 160ms ease;
+  pointer-events: none;
+}
+.toc li { margin: 0; }
+.toc a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px 0 2px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.005em;
+  transition: color 160ms ease;
+}
+.toc a span {
+  display: inline-block;
+  transition: transform 200ms var(--ease-out);
+}
+.toc a:hover {
+  color: var(--ink);
+}
+.toc a:hover span {
+  transform: translateX(3px);
+}
+.toc a[aria-current="location"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Rail footer contacts */
+.contact-mini {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 20px;
+  font-size: 0.875rem;
+}
+.contact-mini a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-mini a:hover {
+  color: var(--accent);
+}
+.contact-mini a:hover .ico {
+  color: var(--accent);
+}
+
+/* Main editorial column */
+main {
+  padding: 76px 0 36px;
+  min-width: 0;
+}
+
+section {
+  scroll-margin-top: 36px;
+  padding-bottom: 84px;
+}
+section:last-of-type {
+  padding-bottom: 56px;
+}
+
+h2 {
+  position: relative;
+  font: 600 0.75rem/1.2 var(--sans);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+  text-wrap: balance;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 28px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* About */
+.about p {
+  font: 400 1.3125rem/1.58 var(--serif);
+  font-optical-sizing: auto;
+  letter-spacing: -0.008em;
+  color: var(--ink);
+  max-width: 52ch;
+  margin: 0 0 20px;
+  text-wrap: pretty;
+}
+.about ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 62ch;
+}
+.about li {
+  position: relative;
+  padding-left: 1.15em;
+  margin: 8px 0;
+  color: var(--ink-body);
+  text-wrap: pretty;
+}
+.about li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.76em;
+  width: 7px;
+  height: 1.5px;
+  background: var(--rule-strong);
+}
+
+code, .num {
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Shared editorial 2-column entries */
+.entry,
+.proj {
+  display: grid;
+  grid-template-columns: 136px minmax(0, 1fr);
+  column-gap: 28px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--rule);
+  scroll-margin-top: 28px;
+}
+.entry:first-of-type { padding-top: 4px; }
+.entry:last-child,
+.proj:last-child { border-bottom: 0; }
+
+.when,
+.proj .kind {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--muted);
+  padding-top: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.when .present {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.entry h3 {
+  font: 500 1.4375rem/1.22 var(--serif);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+.entry .pos {
+  margin: 4px 0 0;
+  font-weight: 500;
+  font-size: 0.96875rem;
+  color: var(--ink);
+}
+.entry .meta {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.84375rem;
+}
+.entry .ctx {
+  color: var(--muted);
+  margin: 12px 0 0;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.entry ul,
+.feature ul {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 62ch;
+}
+.entry li,
+.feature li {
+  position: relative;
+  padding-left: 1.15em;
+  margin: 7px 0;
+  text-wrap: pretty;
+}
+.entry li::before,
+.feature li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.76em;
+  width: 7px;
+  height: 1.5px;
+  background: var(--rule-strong);
+}
+
+.entry .stack {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+.entry .stack strong {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-right: 4px;
+}
+
+/* Inline directional links */
+.more,
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  font-size: 0.90625rem;
+  font-weight: 500;
+}
+.entry .more { margin-top: 6px; }
+.more:hover .ico-right,
+.links a:hover .ico-right { transform: translateX(3px); }
+.more:hover .ico-ext,
+.links a:hover .ico-ext { transform: translate(2px, -2px); }
+
+/* Accessible disclosure with animated chevron */
+details {
+  margin-top: 8px;
+}
+details summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--accent);
+  font-size: 0.90625rem;
+  font-weight: 500;
+  list-style: none;
+  padding-right: 8px;
+  border-radius: 4px;
+  transition: color 140ms ease;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary:hover { color: var(--accent-hover); }
+details summary .ico-chev {
+  color: var(--accent);
+  transition: transform 220ms var(--ease-out);
+}
+details[open] summary .ico-chev {
+  transform: rotate(90deg);
+}
+details[open] ul {
+  margin-top: 4px;
+}
+
+/* Projects */
+.proj-group {
+  margin: 2px 0 14px;
+  font: italic 500 1.0625rem/1.3 var(--serif);
+  font-optical-sizing: auto;
+  color: var(--muted);
+  text-wrap: balance;
+}
+.proj-group--next {
+  margin-top: 42px;
+  padding-top: 6px;
+}
+
+/* Flagship featured case study */
+.feature {
+  display: grid;
+  grid-template-columns: 114px minmax(0, 1fr);
+  column-gap: 24px;
+  padding: 24px 26px 20px;
+  margin: 0 0 14px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+.feature .when { padding-top: 5px; }
+.feature h3 {
+  font: 500 1.4375rem/1.22 var(--serif);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+.feature p {
+  margin: 8px 0 0;
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+.feature .links { margin-top: 8px; }
+
+.proj {
+  padding: 20px 0;
+}
+.proj h3 {
+  font: 500 1.25rem/1.28 var(--serif);
+  font-optical-sizing: auto;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+.proj p {
+  margin: 6px 0 0;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+.proj .stack {
+  color: var(--muted);
+  font-size: 0.90625rem;
+  line-height: 1.58;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 22px;
+  margin-top: 4px;
+}
+
+/* Interests */
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.interests a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  font-size: 0.96875rem;
+  font-weight: 500;
+}
+.interests a:hover .ico-ext {
+  transform: translate(2px, -2px);
+}
+
+/* Contact closing section */
+.contact-big .lead-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  margin: 0 0 10px;
+}
+.contact-big p {
+  font: 400 1.6875rem/1.32 var(--serif);
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 11px;
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  background: var(--paper);
+  color: var(--muted);
+  font: 500 0.8125rem/1 var(--sans);
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+.copy-btn:hover {
+  background: var(--surface);
+  border-color: var(--rule-strong);
+  color: var(--ink);
+}
+.copy-btn[data-copied="true"] {
+  border-color: rgba(31, 122, 83, 0.4);
+  background: rgba(31, 122, 83, 0.07);
+  color: var(--live);
+}
+.contact-big .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 28px;
+}
+.contact-big .row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: 0.96875rem;
+  font-weight: 500;
+}
+.contact-big .row a:hover .ico-ext {
+  transform: translate(2px, -2px);
+}
+
+/* Footer */
+footer {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--rule);
+  padding: 20px 0 40px;
+  font-size: 0.875rem;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+}
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer-actions a,
+.footer-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: 500 0.875rem/1 var(--sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 140ms ease;
+}
+.footer-actions a:hover,
+.footer-actions button:hover {
+  color: var(--accent);
+}
+.footer-actions a:hover .ico-up {
+  transform: translateY(-2px);
+}
+
+/* Laptop & shorter desktop viewports */
+@media (max-width: 1120px) {
+  .wrap {
+    padding: 0 36px;
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+    column-gap: 48px;
+  }
+  .entry, .proj { grid-template-columns: 118px minmax(0, 1fr); column-gap: 22px; }
+  .feature { grid-template-columns: 98px minmax(0, 1fr); column-gap: 20px; padding: 20px 22px 16px; }
+}
+
+@media (min-width: 961px) and (max-height: 800px) {
+  .rail {
+    padding: 32px 6px 20px;
+    margin-inline: -6px;
+    overflow-y: auto;
+  }
+  nav[aria-label="CV sections"] { margin-top: 18px; }
+  .toc a { min-height: 40px; }
+  main { padding-top: 32px; }
+}
+
+/* Tablet & mobile */
+@media (max-width: 960px) {
+  .wrap {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0 22px;
+  }
+  .rail {
+    position: static;
+    height: auto;
+    padding: 36px 0 0;
+  }
+  .who img { width: 58px; height: 58px; }
+  h1 { font-size: 2.35rem; }
+  .role { font-size: 1.15rem; margin-top: 16px; }
+  .current-role { margin-top: 6px; }
+
+  nav[aria-label="CV sections"] {
+    margin: 12px -22px 0;
+    padding: 0 22px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  nav[aria-label="CV sections"]::-webkit-scrollbar { display: none; }
+
+  .toc {
+    flex-direction: row;
+    gap: 20px;
+    padding: 0;
+    border-left: 0;
+  }
+  .toc::before { display: none; }
+  .toc a {
+    padding: 0 2px;
+    min-height: 44px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    position: relative;
+  }
+  .toc a:hover span { transform: none; }
+  .toc a[aria-current="location"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .contact-mini {
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 0;
+    gap: 0 18px;
+  }
+
+  main { padding: 32px 0 20px; }
+  section { padding-bottom: 56px; }
+  h2 { margin-bottom: 22px; }
+  .about p { font-size: 1.1875rem; }
+
+  .entry, .proj, .feature {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .entry { padding: 22px 0; }
+  .feature { padding: 20px 18px 16px; }
+  .when, .proj .kind { padding-top: 0; margin-bottom: 2px; }
+  .when br { display: none; }
+  .contact-big p { font-size: 1.4375rem; }
+}
+
+@media (max-width: 480px) {
+  .wrap { padding: 0 18px; }
+  nav[aria-label="CV sections"] { margin: 12px -18px 0; padding: 0 18px; }
+  .toc { justify-content: space-between; gap: 6px; width: 100%; }
+  .toc a { font-size: 0.8125rem; }
+}
+
+@media (pointer: coarse) {
+  .copy-btn { min-height: 44px; padding: 0 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .toc::before,
+  .toc a span,
+  .ico,
+  details summary .ico-chev {
+    transition: none;
+  }
+  .toc a:hover span,
+  .current-role a:hover .ico,
+  .more:hover .ico-right,
+  .links a:hover .ico-right,
+  .more:hover .ico-ext,
+  .links a:hover .ico-ext,
+  .interests a:hover .ico-ext,
+  .contact-big .row a:hover .ico-ext,
+  .footer-actions a:hover .ico-up {
+    transform: none;
+  }
+}
+
+@media print {
+  @page { margin: 14mm 16mm; }
+  body { background: #fff; color: #111; font-size: 10.5pt; line-height: 1.48; }
+  .skip, nav[aria-label="CV sections"], .copy-btn, .footer-actions, .status-dot { display: none !important; }
+  .wrap { display: block; max-width: none; padding: 0; }
+  .rail { position: static; height: auto; padding: 0 0 14pt; border-bottom: 1px solid #ccc; margin-bottom: 16pt; }
+  .who img { width: 46px; height: 46px; box-shadow: none; }
+  h1 { font-size: 24pt; }
+  .role { font-size: 13pt; margin: 8pt 0 4pt; }
+  .current-role a { min-height: auto; }
+  .contact-mini { margin-top: 8pt; padding-top: 0; border-top: 0; }
+  .contact-mini a { min-height: auto; }
+  main { padding: 0; }
+  section { padding-bottom: 16pt; }
+  h2 { margin-bottom: 10pt; padding-bottom: 4pt; break-after: avoid; }
+  .entry, .proj, .feature { grid-template-columns: 96pt 1fr; column-gap: 14pt; padding: 10pt 0; break-inside: avoid; }
+  .feature { background: none; border: 0; border-bottom: 1px solid #ddd; border-radius: 0; padding: 10pt 0; }
+  a { color: #111; text-decoration: none; }
+  .more, .links a, .interests a, .contact-big .row a { min-height: auto; }
+  footer { padding: 10pt 0 0; }
 }
 </style>
 </head>
 <body>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" focusable="false">
+  <defs>
+    <symbol id="ico-arrow-right" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 8h9"/><path d="M8.75 4.25 12.5 8l-3.75 3.75"/>
+    </symbol>
+    <symbol id="ico-arrow-up-right" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.75 11.25 11.25 4.75"/><path d="M6 4.75h5.25V10"/>
+    </symbol>
+    <symbol id="ico-arrow-down-right" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.75 4.75 11.25 11.25"/><path d="M11.25 6v5.25H6"/>
+    </symbol>
+    <symbol id="ico-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 3.75 10.25 8 6 12.25"/>
+    </symbol>
+    <symbol id="ico-mail" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="3.25" width="12" height="9.5" rx="1.5"/><path d="m2.5 4.25 5.5 4.25 5.5-4.25"/>
+    </symbol>
+    <symbol id="ico-github" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.2 12.6c-2.5.75-2.5-1.25-3.5-1.5m7 2.5v-2.1c0-.6-.2-1.1-.55-1.45 1.8-.2 3.7-.9 3.7-4a3.1 3.1 0 0 0-.85-2.15 2.9 2.9 0 0 0-.08-2.15s-.7-.22-2.25.82a7.8 7.8 0 0 0-4.1 0C4.02 1.53 3.32 1.75 3.32 1.75a2.9 2.9 0 0 0-.08 2.15 3.1 3.1 0 0 0-.84 2.15c0 3.1 1.9 3.8 3.7 4-.35.3-.53.8-.53 1.45v2.1"/>
+    </symbol>
+    <symbol id="ico-linkedin" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2.25" y="2.25" width="11.5" height="11.5" rx="2"/><path d="M5.25 7v4"/><circle cx="5.25" cy="5.1" r="0.5" fill="currentColor" stroke="none"/><path d="M8 11V7m0 1.4A1.75 1.75 0 0 1 11.25 9v2"/>
+    </symbol>
+    <symbol id="ico-copy" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5.5" y="5.5" width="8" height="8" rx="1.4"/><path d="M10.5 5.5V3.9A1.4 1.4 0 0 0 9.1 2.5H3.9A1.4 1.4 0 0 0 2.5 3.9v5.2a1.4 1.4 0 0 0 1.4 1.4h1.6"/>
+    </symbol>
+    <symbol id="ico-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m3.5 8.5 3 3 6-6.5"/>
+    </symbol>
+    <symbol id="ico-arrow-up" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 12.5v-9"/><path d="M4.25 7.25 8 3.5l3.75 3.75"/>
+    </symbol>
+    <symbol id="ico-print" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 5.5V2.75h7V5.5"/><rect x="2.25" y="5.5" width="11.5" height="5.5" rx="1.25"/><path d="M4.5 9.25h7v4h-7z"/>
+    </symbol>
+  </defs>
+</svg>
+
 <a class="skip" href="#about">Skip to content</a>
+
 <div class="wrap">
   <header class="rail">
     <div class="who">
-      <img src="/images/avatar.webp" width="72" height="72" alt="Illustrated avatar of Lorne Luo">
+      <img src="/images/avatar.webp" width="64" height="64" alt="Illustrated avatar of Lorne Luo">
       <div><h1>Lorne Luo</h1></div>
     </div>
-    <p class="role">Senior Data / DevOps / Full-Stack Engineer</p>
+    <p class="role">Senior Data&nbsp;/ DevOps&nbsp;/ Full-Stack Engineer</p>
     <p class="lede">Data pipelines, AWS serverless, CI/CD and web platforms.</p>
-    <p class="current-role"><a href="#selfwealth">Data ETL Engineer at Selfwealth</a></p>
+    <p class="current-role">
+      <a href="#selfwealth">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="label">Data ETL Engineer at Selfwealth</span>
+        <svg class="ico" aria-hidden="true"><use href="#ico-arrow-down-right"/></svg>
+      </a>
+    </p>
     <nav aria-label="CV sections">
       <ul class="toc">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about"><span>About</span></a></li>
+        <li><a href="#experience"><span>Experience</span></a></li>
+        <li><a href="#projects"><span>Projects</span></a></li>
+        <li><a href="#education"><span>Education</span></a></li>
+        <li><a href="#contact"><span>Contact</span></a></li>
       </ul>
     </nav>
     <div class="contact-mini">
-      <a href="mailto:dev@luotao.net">dev@luotao.net</a>
-      <a href="https://github.com/lorne-luo" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/lorne-luo" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:dev@luotao.net">
+        <svg class="ico ico-lg" aria-hidden="true"><use href="#ico-mail"/></svg>
+        <span>dev@luotao.net</span>
+      </a>
+      <a href="https://github.com/lorne-luo" target="_blank" rel="noopener">
+        <svg class="ico ico-lg" aria-hidden="true"><use href="#ico-github"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="https://www.linkedin.com/in/lorne-luo" target="_blank" rel="noopener">
+        <svg class="ico ico-lg" aria-hidden="true"><use href="#ico-linkedin"/></svg>
+        <span>LinkedIn</span>
+      </a>
     </div>
   </header>
 
@@ -153,7 +984,7 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
       <h2 id="h-exp">Experience</h2>
 
       <article class="entry" id="selfwealth">
-        <div class="when">Aug 2024 –<br>Present</div>
+        <div class="when">Aug 2024 – <br><span class="present">Present</span></div>
         <div>
           <h3>Selfwealth</h3>
           <p class="pos">Data ETL Engineer</p>
@@ -171,7 +1002,7 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
       </article>
 
       <article class="entry" id="lob">
-        <div class="when">Apr 2020 –<br>May 2024</div>
+        <div class="when">Apr 2020 – <br>May 2024</div>
         <div>
           <h3>Leighton O’Brien / Titan Cloud</h3>
           <p class="pos">Senior Data Engineer / DevOps</p>
@@ -182,7 +1013,10 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
             <li>Restructured the S3 data lake, refined data mapping/validation and created a data archiving plan.</li>
           </ul>
           <details>
-            <summary>6 more highlights</summary>
+            <summary>
+              <svg class="ico ico-chev" aria-hidden="true"><use href="#ico-chevron"/></svg>
+              <span>6 more highlights</span>
+            </summary>
             <ul>
               <li>Built CI/CD pipelines with Jenkins, GitHub Actions, Bash, PowerShell, AWS SSM and EventBridge for deployment, data transfer and provisioning.</li>
               <li>Automated duplicating the QA environment from production data fragments, speeding up dev and integration testing.</li>
@@ -192,12 +1026,15 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
               <li>Created REST APIs and front pages in FastAPI, Flask and Angular to support the Yellowfin BI platform.</li>
             </ul>
           </details>
-          <a class="more" href="/employment/lob/">Showcases from this role</a>
+          <a class="more" href="/employment/lob/">
+            <span>Showcases from this role</span>
+            <svg class="ico ico-right" aria-hidden="true"><use href="#ico-arrow-right"/></svg>
+          </a>
         </div>
       </article>
 
       <article class="entry" id="butterfly">
-        <div class="when">Jul 2017 –<br>Apr 2020</div>
+        <div class="when">Jul 2017 – <br>Apr 2020</div>
         <div>
           <h3>Butterfly</h3>
           <p class="pos">Senior Full Stack Developer</p>
@@ -208,12 +1045,15 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
             <li>Python and back-end expert for the team; maintained reusable libraries and a standard starter repository.</li>
             <li>Firefighter for urgent deadlines and thorny projects; hosted an Opensource-Insight channel in the team Slack.</li>
           </ul>
-          <a class="more" href="/employment/butterfly/">Showcases from this role</a>
+          <a class="more" href="/employment/butterfly/">
+            <span>Showcases from this role</span>
+            <svg class="ico ico-right" aria-hidden="true"><use href="#ico-arrow-right"/></svg>
+          </a>
         </div>
       </article>
 
       <article class="entry" id="combitel">
-        <div class="when">Mar 2015 –<br>Feb 2017</div>
+        <div class="when">Mar 2015 – <br>Feb 2017</div>
         <div>
           <h3>Combitel</h3>
           <p class="pos">Full Stack Developer</p>
@@ -244,8 +1084,14 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
             <li>10+ tech wiki pages and skill-share talks, e.g. <a href="https://docs.google.com/presentation/d/e/2PACX-1vRt0M-7vtCmvnr38hKsjtzPE1Y_uIedUxbZwFv-3BIEvH9NB0rFe8OzvNzzcQ_DJdPWeMwJbVLbZPys/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank" rel="noopener">Advanced Git</a> and <a href="https://docs.google.com/presentation/d/e/2PACX-1vTNimnu1UlgmVXTyRTLg1xI37UNUqADgQXLFSvhc6d0cz9Bo9_hbWxd-vIXTGhOFjL5Q_55Ji1AKWlH/pub?start=true&amp;loop=false&amp;delayms=5000" target="_blank" rel="noopener">TDD and How to</a>.</li>
           </ul>
           <div class="links">
-            <a href="/showcase/2024/04/29/fuse.html">Project Fuse showcase</a>
-            <a href="https://www.leightonobrien.com/wp-content/uploads/2023/09/iHUB-flyer-Leighton-OBrien-Fuel-Management.pdf" target="_blank" rel="noopener">iHub product brochure (PDF)</a>
+            <a href="/showcase/2024/04/29/fuse.html">
+              <span>Project Fuse showcase</span>
+              <svg class="ico ico-right" aria-hidden="true"><use href="#ico-arrow-right"/></svg>
+            </a>
+            <a href="https://www.leightonobrien.com/wp-content/uploads/2023/09/iHUB-flyer-Leighton-OBrien-Fuel-Management.pdf" target="_blank" rel="noopener">
+              <span>iHub product brochure (PDF)</span>
+              <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+            </a>
           </div>
         </div>
       </article>
@@ -256,7 +1102,12 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
           <h3>PoolHub</h3>
           <p>Machine learning that helps pool-shop customers read the values on pool test strips.</p>
           <p class="stack">Collected labelled strip photos, trained a YOLOv8 detector, normalised brightness and colour balance, and trained 7 supervised models to predict the readings.</p>
-          <div class="links"><a href="/showcase/2024/04/29/poolhub.html">PoolHub showcase</a></div>
+          <div class="links">
+            <a href="/showcase/2024/04/29/poolhub.html">
+              <span>PoolHub showcase</span>
+              <svg class="ico ico-right" aria-hidden="true"><use href="#ico-arrow-right"/></svg>
+            </a>
+          </div>
         </div>
       </article>
 
@@ -266,7 +1117,12 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
           <h3>Orpheus</h3>
           <p>Automatically generates videos, karaoke tracks and subtitles for music and publishes them to YouTube.</p>
           <p class="stack">ChatGPT, Stable Diffusion, Real-ESRGAN, Wav2lip, FFmpeg, UVR5, Whisper, Librosa.</p>
-          <div class="links"><a href="https://www.youtube.com/channel/UCa9BFIWwR2y5L8neMgZWyXA" target="_blank" rel="noopener">YouTube channel</a></div>
+          <div class="links">
+            <a href="https://www.youtube.com/channel/UCa9BFIWwR2y5L8neMgZWyXA" target="_blank" rel="noopener">
+              <span>YouTube channel</span>
+              <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+            </a>
+          </div>
         </div>
       </article>
 
@@ -276,7 +1132,12 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
           <h3>Hawkeye</h3>
           <p>Weekly decision-making system for ASX shares, ranking return–risk balance with a Monte Carlo stochastic approach.</p>
           <p class="stack">Python, Kinesis, Airflow, DynamoDB, Lambda, Redis, Django, TA-Lib, Pandas, NumPy, Matplotlib, Seaborn.</p>
-          <div class="links"><a href="http://hawkeye.luotao.net" target="_blank" rel="noopener">hawkeye.luotao.net</a></div>
+          <div class="links">
+            <a href="http://hawkeye.luotao.net" target="_blank" rel="noopener">
+              <span>hawkeye.luotao.net</span>
+              <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+            </a>
+          </div>
         </div>
       </article>
 
@@ -289,8 +1150,7 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
         </div>
       </article>
 
-      <div class="spacer"></div>
-      <h3 class="proj-group">Web applications</h3>
+      <h3 class="proj-group proj-group--next">Web applications</h3>
 
       <article class="proj">
         <div class="kind">E-commerce &amp; certification</div>
@@ -299,8 +1159,14 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
           <p>International site for the Monash University Low FODMAP Diet: public site, blog, e-commerce, course enrolment and recipe certification.</p>
           <p class="stack">Started as a contractor and wrote 60% of the code in 6 months; built two-way Django ↔ Salesforce sync and the core certification workflow; model-driven development cut new-project effort by 20–40%.</p>
           <div class="links">
-            <a href="/projects/monash-fodmap/">Monash FODMAP showcase</a>
-            <a href="https://www.monashfodmap.com" target="_blank" rel="noopener">monashfodmap.com</a>
+            <a href="/projects/monash-fodmap/">
+              <span>Monash FODMAP showcase</span>
+              <svg class="ico ico-right" aria-hidden="true"><use href="#ico-arrow-right"/></svg>
+            </a>
+            <a href="https://www.monashfodmap.com" target="_blank" rel="noopener">
+              <span>monashfodmap.com</span>
+              <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+            </a>
           </div>
         </div>
       </article>
@@ -311,7 +1177,12 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
           <h3>Medechat</h3>
           <p>Veterinary telemedicine platform for veterinarians, specialists and customers.</p>
           <p class="stack">GraphQL (Graphene) + Celery + React; model-driven development saved about 20% of development time.</p>
-          <div class="links"><a href="https://www.medechat.com.au" target="_blank" rel="noopener">medechat.com.au</a></div>
+          <div class="links">
+            <a href="https://www.medechat.com.au" target="_blank" rel="noopener">
+              <span>medechat.com.au</span>
+              <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+            </a>
+          </div>
         </div>
       </article>
 
@@ -321,7 +1192,12 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
           <h3>Reform Clothing</h3>
           <p>Custom-made apparel from design to delivery.</p>
           <p class="stack">Tuned Django DRF APIs (around 95% less response time), built the React custom apparel designer, and real-time callbacks from the Salesforce sync middleware.</p>
-          <div class="links"><a href="https://www.reformclothing.com" target="_blank" rel="noopener">reformclothing.com</a></div>
+          <div class="links">
+            <a href="https://www.reformclothing.com" target="_blank" rel="noopener">
+              <span>reformclothing.com</span>
+              <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+            </a>
+          </div>
         </div>
       </article>
 
@@ -331,7 +1207,12 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
           <h3>OmniScreen Pilot</h3>
           <p>Enterprise TV and digital-signage server, as an appliance or a cloud SaaS.</p>
           <p class="stack">Distributed TV device management with Django + Celery, FFmpeg encoding and EPG streaming, CI/CD with Jenkins, Docker and SaltStack.</p>
-          <div class="links"><a href="http://omniscreen.com.au" target="_blank" rel="noopener">omniscreen.com.au</a></div>
+          <div class="links">
+            <a href="http://omniscreen.com.au" target="_blank" rel="noopener">
+              <span>omniscreen.com.au</span>
+              <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+            </a>
+          </div>
         </div>
       </article>
 
@@ -342,8 +1223,14 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
           <p>Multi-tenant order and logistics management: customers, orders, delivery, tracking and reporting.</p>
           <p class="stack">Django, Celery, Postgres, Vue.js.</p>
           <div class="links">
-            <a href="/images/ozsales.png" target="_blank" rel="noopener">Screenshots</a>
-            <a href="http://s.luotao.net" target="_blank" rel="noopener">s.luotao.net</a>
+            <a href="/images/ozsales.png" target="_blank" rel="noopener">
+              <span>Screenshots</span>
+              <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+            </a>
+            <a href="http://s.luotao.net" target="_blank" rel="noopener">
+              <span>s.luotao.net</span>
+              <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+            </a>
           </div>
         </div>
       </article>
@@ -371,61 +1258,157 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding:22px 0 40px;fon
     <section id="more" aria-labelledby="h-more">
       <h2 id="h-more">A little more</h2>
       <ul class="interests">
-        <li><a href="https://www.dreamstime.com/luotao_info#res6109850" target="_blank" rel="noopener">Photography</a></li>
-        <li><a href="https://www.youtube.com/@user-yg1zb6xb3j/videos" target="_blank" rel="noopener">YouTube channel</a></li>
-        <li><a href="https://youtu.be/w4rGUOMeu8I" target="_blank" rel="noopener">Snowboarding</a></li>
-        <li><a href="https://youtu.be/Xm2Yx8Oiwvc" target="_blank" rel="noopener">Drone aerial filming</a></li>
+        <li>
+          <a href="https://www.dreamstime.com/luotao_info#res6109850" target="_blank" rel="noopener">
+            <span>Photography</span>
+            <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@user-yg1zb6xb3j/videos" target="_blank" rel="noopener">
+            <span>YouTube channel</span>
+            <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtu.be/w4rGUOMeu8I" target="_blank" rel="noopener">
+            <span>Snowboarding</span>
+            <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtu.be/Xm2Yx8Oiwvc" target="_blank" rel="noopener">
+            <span>Drone aerial filming</span>
+            <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+          </a>
+        </li>
       </ul>
     </section>
 
     <section id="contact" class="contact-big" aria-labelledby="h-contact">
       <h2 id="h-contact">Contact</h2>
-      <p>Write to <a href="mailto:dev@luotao.net">dev@luotao.net</a></p>
+      <div class="lead-line">
+        <p>Write to <a href="mailto:dev@luotao.net">dev@luotao.net</a></p>
+        <button class="copy-btn" type="button" id="copy-email" data-email="dev@luotao.net" aria-live="polite">
+          <svg class="ico" aria-hidden="true"><use href="#ico-copy"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
       <div class="row">
-        <a href="https://github.com/lorne-luo" target="_blank" rel="noopener">github.com/lorne-luo</a>
-        <a href="https://www.linkedin.com/in/lorne-luo" target="_blank" rel="noopener">linkedin.com/in/lorne-luo</a>
+        <a href="https://github.com/lorne-luo" target="_blank" rel="noopener">
+          <span>github.com/lorne-luo</span>
+          <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/lorne-luo" target="_blank" rel="noopener">
+          <span>linkedin.com/in/lorne-luo</span>
+          <svg class="ico ico-ext" aria-hidden="true"><use href="#ico-arrow-up-right"/></svg>
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
     <span>Lorne Luo · References available on request</span>
+    <div class="footer-actions">
+      <button type="button" id="print-cv">
+        <svg class="ico" aria-hidden="true"><use href="#ico-print"/></svg>
+        <span>Print CV</span>
+      </button>
+      <a href="#top">
+        <span>Back to top</span>
+        <svg class="ico ico-up" aria-hidden="true"><use href="#ico-arrow-up"/></svg>
+      </a>
+    </div>
   </footer>
 </div>
+
 <script>
 (function(){
-  var links=[].slice.call(document.querySelectorAll('.toc a'));
-  var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
-  var fragment=location.hash;
-  var wasAtBottom=false;
-  var ticking=false;
-  function update(){
-    ticking=false;
-    var line=Math.min(120,innerHeight*0.25), cur=0;
-    secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=line)cur=i;});
+  var toc = document.querySelector('.toc');
+  var links = [].slice.call(document.querySelectorAll('.toc a'));
+  var secs = links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  var fragment = location.hash;
+  var wasAtBottom = false;
+  var ticking = false;
 
-    var atBottom=Math.ceil(scrollY+innerHeight)>=document.documentElement.scrollHeight-1;
-    if(wasAtBottom&&!atBottom)fragment='';
-    wasAtBottom=atBottom;
-    if(atBottom){
-      // On tall screens, the last two anchors can land at the same scroll position.
-      var requested=links.findIndex(function(a){return a.hash===fragment;});
-      var target=secs[requested];
-      var clamped=target&&target.getBoundingClientRect().top>=parseFloat(getComputedStyle(target).scrollMarginTop);
-      cur=clamped ? requested : links.length-1;
+  function moveIndicator(activeLink){
+    if (!toc || !activeLink) return;
+    var h = Math.round(activeLink.offsetHeight * 0.56);
+    var y = Math.round(activeLink.offsetTop + (activeLink.offsetHeight - h) / 2);
+    toc.style.setProperty('--toc-y', y + 'px');
+    toc.style.setProperty('--toc-h', h + 'px');
+    toc.style.setProperty('--toc-o', '1');
+  }
+
+  function update(){
+    ticking = false;
+    var line = Math.min(140, innerHeight * 0.25), cur = 0;
+    secs.forEach(function(s, i){ if (s && s.getBoundingClientRect().top <= line) cur = i; });
+
+    var atBottom = Math.ceil(scrollY + innerHeight) >= document.documentElement.scrollHeight - 1;
+    if (wasAtBottom && !atBottom) fragment = '';
+    wasAtBottom = atBottom;
+    if (atBottom) {
+      var requested = links.findIndex(function(a){ return a.hash === fragment; });
+      var target = secs[requested];
+      var clamped = target && target.getBoundingClientRect().top >= parseFloat(getComputedStyle(target).scrollMarginTop);
+      cur = clamped ? requested : links.length - 1;
     }
 
-    links.forEach(function(a,i){
-      if(i===cur)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');
+    links.forEach(function(a, i){
+      if (i === cur) a.setAttribute('aria-current', 'location');
+      else a.removeAttribute('aria-current');
+    });
+    moveIndicator(links[cur]);
+  }
+
+  function scheduleUpdate(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+
+  addEventListener('scroll', scheduleUpdate, { passive: true });
+  addEventListener('resize', scheduleUpdate);
+  addEventListener('hashchange', function(){ fragment = location.hash; scheduleUpdate(); });
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(scheduleUpdate); }
+  update();
+
+  var copyBtn = document.getElementById('copy-email');
+  if (copyBtn) {
+    var resetTimer = null;
+    copyBtn.addEventListener('click', function(){
+      var email = copyBtn.getAttribute('data-email');
+      function confirmCopied(){
+        copyBtn.setAttribute('data-copied', 'true');
+        copyBtn.querySelector('use').setAttribute('href', '#ico-check');
+        copyBtn.querySelector('span').textContent = 'Copied';
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(function(){
+          copyBtn.removeAttribute('data-copied');
+          copyBtn.querySelector('use').setAttribute('href', '#ico-copy');
+          copyBtn.querySelector('span').textContent = 'Copy';
+        }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(confirmCopied, fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+      function fallbackCopy(){
+        var ta = document.createElement('textarea');
+        ta.value = email;
+        ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); confirmCopied(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
     });
   }
-  function scheduleUpdate(){
-    if(!ticking){ticking=true;requestAnimationFrame(update);}
+
+  var printBtn = document.getElementById('print-cv');
+  if (printBtn) {
+    printBtn.addEventListener('click', function(){ window.print(); });
   }
-  addEventListener('scroll',scheduleUpdate,{passive:true});
-  addEventListener('resize',scheduleUpdate);
-  addEventListener('hashchange',function(){fragment=location.hash;scheduleUpdate();});
-  update();
 })();
 </script>
 </body>
