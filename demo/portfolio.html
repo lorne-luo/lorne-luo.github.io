@@ -62,14 +62,10 @@ section{scroll-margin-top:72px}
 .pool-grid figure:nth-child(3){margin-top:-52px}
 .pool-grid img{background:#fff;border:1px solid var(--line)}
 
-/* Fuse: before / after pair with the numbers between */
-.c-fuse .pair{display:grid;grid-template-columns:minmax(0,1fr) 220px minmax(0,1fr);gap:32px;align-items:center;margin-top:36px}
-.c-fuse figure{margin:0}
-.c-fuse img{background:#fff;border:1px solid var(--line)}
-.delta{text-align:center}
-.delta .big{font-size:44px;line-height:1;font-weight:500;letter-spacing:-.02em}
-.delta .small{font-size:14px;color:var(--muted);margin:6px 0 18px}
 .c-fuse .head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:end}
+.fuse-results{display:flex;flex-wrap:wrap;gap:16px 36px;margin:24px 0 0}
+.fuse-results dt{font-size:14px;color:var(--muted)}
+.fuse-results dd{margin:2px 0 0;font-size:24px;font-weight:500}
 
 /* Monash: wide screenshot, two details beside */
 .c-monash{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:start}
@@ -136,9 +132,6 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:14px;color
   .case{padding-bottom:72px}
   .case h3{font-size:28px}
   .pool-grid figure:nth-child(2),.pool-grid figure:nth-child(3){margin-top:0}
-  .c-fuse .pair{grid-template-columns:1fr;gap:20px}
-  .delta{display:flex;gap:18px;align-items:baseline;justify-content:flex-start;text-align:left;flex-wrap:wrap}
-  .delta .small{margin:0}
   .wall{columns:1}
   .roles,.edu{grid-template-columns:1fr}
   .contact .mail{font-size:38px}
@@ -212,20 +205,17 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:14px;color
           <p class="what">At Leighton O’Brien, worked with the primary data scientist to move an Excel/VBS wetstock analysis into a modern, containerised Python service on AWS.</p>
         </div>
         <ul class="facts">
+          <li>Legacy Excel/VBS jobs ran across 200 EC2 servers and required Windows and Excel licences</li>
           <li>Rewritten with Pandas / Polars, NumPy, Matplotlib and Seaborn; configuration extracted, TDD applied</li>
           <li>First on AWS Lambda, then moved to AWS Batch; Lambda layers and AMI for the runtime</li>
           <li>Automated test, build and deployment; custom CloudWatch metrics and traces</li>
         </ul>
       </div>
-      <div class="pair">
-        <figure><img src="assets/img/fuse-legacy.webp" width="1400" height="1072" loading="lazy" alt="Hand-drawn map of the legacy Excel/VBS workflow"><figcaption class="cap"><span><b>Before</b> — Excel/VBS on 200 EC2 servers plus Windows/Excel licences</span></figcaption></figure>
-        <div class="delta" aria-label="Result">
-          <div class="big">2 h</div><div class="small">daily jobs, before</div>
-          <div class="big">30 s</div><div class="small">daily analysis for 20k sites, after</div>
-          <div class="big">10x</div><div class="small">faster, and lower cost</div>
-        </div>
-        <figure><img src="assets/img/fuse-architecture.webp" width="1400" height="860" loading="lazy" alt="Fuse AWS architecture diagram with Lambda, SQS and S3"><figcaption class="cap"><span><b>After</b> — serverless Python on AWS</span></figcaption></figure>
-      </div>
+      <dl class="fuse-results">
+        <div><dt>Previous daily run</dt><dd>2 hours</dd></div>
+        <div><dt>Daily analysis for 20k sites</dt><dd>30 seconds</dd></div>
+        <div><dt>Reported speedup with lower cost</dt><dd>10×</dd></div>
+      </dl>
       <a class="go" href="https://cv.luotao.net/showcase/2024/04/29/fuse.html">Read the Project Fuse case study</a>
     </article>
 
